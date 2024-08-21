@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "c125f7b5-2e8d-4e33-bf0c-f9cebe700699",
+		"name": "REPORTES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-c125f7b5-2e8d-4e33-bf0c-f9cebe700699?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/reports/employee/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"in": "header",
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/reports/employee/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"reports",
+						"employee",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66bdfb0a9dc41f550e6be4b4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reporte por Empleado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/reports/employee/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"employee",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66bdfb0a9dc41f550e6be4b4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "43"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:12:15 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195691"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1924"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"784-So6TWPlR6ADW3J/D65HrcQtxNS8\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Reporte por empleado obtenida exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"promedioPorCompetencias\": [\n            {\n                \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n                \"nombreCompetencia\": \"Orientación a resultados\",\n                \"promedioValor\": 4.25\n            },\n            {\n                \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                \"nombreCompetencia\": \"Trabajo en equipo\",\n                \"promedioValor\": 2.5\n            },\n            {\n                \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n                \"nombreCompetencia\": \"Comunicación\",\n                \"promedioValor\": 2.25\n            }\n        ],\n        \"promedioPorCompetenciasYTiposEvaluadores\": [\n            {\n                \"_id\": {\n                    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n                    \"tipoEvaluador\": \"Supervisor\"\n                },\n                \"nombreCompetencia\": \"Orientación a resultados\",\n                \"tipoEvaluador\": \"Supervisor\",\n                \"promedioValor\": 4\n            },\n            {\n                \"_id\": {\n                    \"competenciaId\": \"66beb950ca505cb2c9a2e4f3\",\n                    \"tipoEvaluador\": \"Supervisor\"\n                },\n                \"nombreCompetencia\": \"Trabajo en equipo\",\n                \"tipoEvaluador\": \"Supervisor\",\n                \"promedioValor\": 3\n            },\n            {\n                \"_id\": {\n                    \"competenciaId\": \"66beb92eca505cb2c9a2e4ef\",\n                    \"tipoEvaluador\": \"Supervisor\"\n                },\n                \"nombreCompetencia\": \"Comunicación\",\n                \"tipoEvaluador\": \"Supervisor\",\n                \"promedioValor\": 2\n            }\n        ],\n        \"promedioPorPreguntas\": [\n            {\n                \"_id\": \"66bec3f5fed88e63a47960b9\",\n                \"textoPregunta\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n                \"promedioValor\": 4.25\n            },\n            {\n                \"_id\": \"66bec3cdfed88e63a47960ab\",\n                \"textoPregunta\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n                \"promedioValor\": 2.5\n            },\n            {\n                \"_id\": \"66bec30fc7f20bdc08c756cc\",\n                \"textoPregunta\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n                \"promedioValor\": 2.25\n            }\n        ],\n        \"top2CompetenciasMayor\": [\n            {\n                \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n                \"nombreCompetencia\": \"Orientación a resultados\",\n                \"promedioValor\": 4.25\n            },\n            {\n                \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                \"nombreCompetencia\": \"Trabajo en equipo\",\n                \"promedioValor\": 2.5\n            }\n        ],\n        \"top2CompetenciasMenor\": [\n            {\n                \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n                \"nombreCompetencia\": \"Comunicación\",\n                \"promedioValor\": 2.25\n            },\n            {\n                \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                \"nombreCompetencia\": \"Trabajo en equipo\",\n                \"promedioValor\": 2.5\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/reports/department/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"in": "header",
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/reports/department/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"reports",
+						"department",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "Dirección General"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reporte por departamento",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/reports/department/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"department",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "Dirección General"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "42"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:12:29 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195691"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1175"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"497-6ZKxpG5MBYaqAe5uLxm7DpcE3+I\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Reporte por departamento obtenida exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"promedioPorDepartamento\": [\n            {\n                \"_id\": \"Dirección General\",\n                \"promedioValor\": 3\n            }\n        ],\n        \"promedioPorPreguntaYDepartamento\": [\n            {\n                \"_id\": {\n                    \"departamento\": \"Dirección General\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\"\n                },\n                \"departamento\": \"Dirección General\",\n                \"textoPregunta\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n                \"promedioValor\": 2.3333333333333335\n            },\n            {\n                \"_id\": {\n                    \"departamento\": \"Dirección General\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\"\n                },\n                \"departamento\": \"Dirección General\",\n                \"textoPregunta\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n                \"promedioValor\": 2.3333333333333335\n            },\n            {\n                \"_id\": {\n                    \"departamento\": \"Dirección General\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\"\n                },\n                \"departamento\": \"Dirección General\",\n                \"textoPregunta\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n                \"promedioValor\": 4.333333333333333\n            }\n        ],\n        \"topDepartamentosCalificacionMayor\": [\n            {\n                \"_id\": \"Dirección General\",\n                \"promedioValor\": 3\n            }\n        ],\n        \"topDepartamentosCalificacionMenor\": [\n            {\n                \"_id\": \"Dirección General\",\n                \"promedioValor\": 3\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,631 @@
+{
+	"info": {
+		"_postman_id": "408890a3-beb5-4576-9d4e-4e86b1b2f943",
+		"name": "EMPLOYE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-408890a3-beb5-4576-9d4e-4e86b1b2f943?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/employees",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombres\": \"empleadoZ\",\r\n    \"apellidos\": \"empleadoZ\",\r\n    \"email\": \"Z@gmail.com\",\r\n    \"telefono\": \"584127745208\",\r\n    \"puesto\": \"Reclutador\",\r\n    \"departamento\": \"Recursos Humanos\",\r\n    \"salario\": 2500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/employees"
+			},
+			"response": [
+				{
+					"name": "Empleado creado correctamente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombres\": \"empleadoD\",\r\n    \"apellidos\": \"empleadoD\",\r\n    \"email\": \"D@gmail.com\",\r\n    \"telefono\": \"584127745208\",\r\n    \"puesto\": \"Reclutador\",\r\n    \"departamento\": \"Recursos Humanos\",\r\n    \"salario\": 2500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/employees"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "42"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:48:43 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190580"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "413"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19d-aRvyPRCxZOjX9OHwGjnYwT0Hc/0\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Empleado creado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"email\": \"d@gmail.com\",\n        \"nombres\": \"empleadoD\",\n        \"apellidos\": \"empleadoD\",\n        \"puesto\": \"Reclutador\",\n        \"departamento\": \"Recursos Humanos\",\n        \"salario\": 2500,\n        \"evaluaciones\": [],\n        \"_id\": \"66c50f3be5c649d886020914\",\n        \"fechaContrato\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaCreacion\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaActualizacion\": \"2024-08-20T21:48:43.145Z\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "Empleado duplicado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombres\": \"empleadoD\",\r\n    \"apellidos\": \"empleadoD\",\r\n    \"email\": \"D@gmail.com\",\r\n    \"telefono\": \"584127745208\",\r\n    \"puesto\": \"Reclutador\",\r\n    \"departamento\": \"Recursos Humanos\",\r\n    \"salario\": 2500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/employees"
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:49:10 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190580"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7-CncAMV9dv1f7nfZAp1TEcF2ltW8\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Error al crear empleado: E11000 duplicate key error collection: test.empleados index: email_1 dup key: { email: \\\"d@gmail.com\\\" }\",\n    \"status\": \"error\",\n    \"code\": 500,\n    \"data\": null\n}"
+				},
+				{
+					"name": "Empleado con error en los datos proporcionados",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombres\": \"empleadoD\",\r\n    \"apellidos\": \"empleadoD\", \r\n    \"telefono\": \"584127745208\",\r\n    \"puesto\": \"Reclutador\",\r\n    \"departamento\": \"Recursos Humanos\",\r\n    \"salario\": 2500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/employees"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:49:46 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190767"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-Uwri2/dh3j7BEwLR7LISiSkoBsM\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Error en los datos proporcionados\",\n    \"status\": \"failed\",\n    \"code\": 400,\n    \"data\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Debe ser un email válido\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/employees",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{Url}}/api/employees"
+			},
+			"response": [
+				{
+					"name": "Lista de empleados OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Url}}/api/employees"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "48"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:50:52 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190767"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2373"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"945-LCWFg2xEvxihr1Tukjn55MJFJW0\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Lista de empleados obtenida exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"email\": \"luis.alvarado@gmail.com\",\n            \"nombres\": \"Luis\",\n            \"apellidos\": \"Alvarado\",\n            \"puesto\": \"Programador\",\n            \"departamento\": \"Informática\",\n            \"salario\": 1500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-15T12:54:54.813Z\",\n            \"fechaCreacion\": \"2024-08-15T12:54:54.814Z\",\n            \"fechaActualizacion\": \"2024-08-15T12:54:54.814Z\",\n            \"__v\": 0,\n            \"evaluadores\": []\n        },\n        {\n            \"_id\": \"66bdfb0a9dc41f550e6be4b4\",\n            \"email\": \"albi.arias@gmail.com\",\n            \"nombres\": \"Albimar Daniela\",\n            \"apellidos\": \"Arias\",\n            \"puesto\": \"Gerente General\",\n            \"departamento\": \"Dirección General\",\n            \"salario\": 2500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-15T12:56:42.127Z\",\n            \"fechaCreacion\": \"2024-08-15T12:56:42.127Z\",\n            \"fechaActualizacion\": \"2024-08-15T13:29:22.165Z\",\n            \"__v\": 0,\n            \"evaluadores\": [\n                {\n                    \"_id\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluadorId\": \"66be82b1ada6df2338a762b7\",\n                    \"tipoEvaluador\": \"Subordinado\",\n                    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaCreacion\": \"2024-08-15T23:03:37.976Z\",\n                    \"fechaActualizacion\": \"2024-08-15T23:56:51.956Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"66be894a6c5649fdf7326145\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"tipoEvaluador\": \"Supervisor\",\n                    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaCreacion\": \"2024-08-15T23:03:37.976Z\",\n                    \"fechaActualizacion\": \"2024-08-15T23:03:37.976Z\",\n                    \"__v\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"66be82a5ada6df2338a762b5\",\n            \"email\": \"empleado1@gmail.com\",\n            \"nombres\": \"empleado1\",\n            \"apellidos\": \"empleado1\",\n            \"puesto\": \"Reclutador\",\n            \"departamento\": \"Recursos Humanos\",\n            \"salario\": 2500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-15T22:35:17.137Z\",\n            \"fechaCreacion\": \"2024-08-15T22:35:17.137Z\",\n            \"fechaActualizacion\": \"2024-08-15T22:35:17.137Z\",\n            \"__v\": 0,\n            \"evaluadores\": []\n        },\n        {\n            \"_id\": \"66be82b1ada6df2338a762b7\",\n            \"email\": \"empleado2@gmail.com\",\n            \"nombres\": \"empleado2\",\n            \"apellidos\": \"empleado2\",\n            \"puesto\": \"Reclutador\",\n            \"departamento\": \"Recursos Humanos\",\n            \"salario\": 2500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-15T22:35:29.646Z\",\n            \"fechaCreacion\": \"2024-08-15T22:35:29.646Z\",\n            \"fechaActualizacion\": \"2024-08-15T22:35:29.646Z\",\n            \"__v\": 0,\n            \"evaluadores\": []\n        },\n        {\n            \"_id\": \"66c50f3be5c649d886020914\",\n            \"email\": \"d@gmail.com\",\n            \"nombres\": \"empleadoD\",\n            \"apellidos\": \"empleadoD\",\n            \"puesto\": \"Reclutador\",\n            \"departamento\": \"Recursos Humanos\",\n            \"salario\": 2500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-20T21:48:43.145Z\",\n            \"fechaCreacion\": \"2024-08-20T21:48:43.145Z\",\n            \"fechaActualizacion\": \"2024-08-20T21:48:43.145Z\",\n            \"__v\": 0,\n            \"evaluadores\": []\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/employees/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/employees/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c50f3be5c649d886020914"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtiene un empleado por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/employees/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c50f3be5c649d886020914"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:51:36 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190767"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "415"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19f-J1PWo8itv4SEIYcBp+VK4rplVp8\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Empleado obtenido exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c50f3be5c649d886020914\",\n        \"email\": \"d@gmail.com\",\n        \"nombres\": \"empleadoD\",\n        \"apellidos\": \"empleadoD\",\n        \"puesto\": \"Reclutador\",\n        \"departamento\": \"Recursos Humanos\",\n        \"salario\": 2500,\n        \"evaluaciones\": [],\n        \"fechaContrato\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaCreacion\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaActualizacion\": \"2024-08-20T21:48:43.145Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/employees/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombres\": \"Empleado nuevo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/employees/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c50f3be5c649d886020914"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualiza empleado por id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombres\": \"Empleado nuevo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/employees/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c50f3be5c649d886020914"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:52:49 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190950"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "423"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a7-59/5+/xj6EglKreDA9UEEwJ5NsA\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Empleado actualizado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c50f3be5c649d886020914\",\n        \"email\": \"d@gmail.com\",\n        \"nombres\": \"Empleado nuevo\",\n        \"apellidos\": \"empleadoD\",\n        \"puesto\": \"Reclutador\",\n        \"departamento\": \"Recursos Humanos\",\n        \"salario\": 2500,\n        \"evaluaciones\": [],\n        \"fechaContrato\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaCreacion\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaActualizacion\": \"2024-08-20T21:52:49.166Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/employees/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/employees/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c50f3be5c649d886020914"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Elimina empleado por id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/employees/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c50f3be5c649d886020914"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "48"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 21:53:18 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724190950"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "421"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a5-OWeqQT1/JuDvgJEGkJ0r0eO/ivM\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Empleado eliminado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c50f3be5c649d886020914\",\n        \"email\": \"d@gmail.com\",\n        \"nombres\": \"Empleado nuevo\",\n        \"apellidos\": \"empleadoD\",\n        \"puesto\": \"Reclutador\",\n        \"departamento\": \"Recursos Humanos\",\n        \"salario\": 2500,\n        \"evaluaciones\": [],\n        \"fechaContrato\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaCreacion\": \"2024-08-20T21:48:43.145Z\",\n        \"fechaActualizacion\": \"2024-08-20T21:52:49.166Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}

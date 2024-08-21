@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "018509f3-aef0-40d9-a273-2d152d0c1e8f",
+		"name": "EVALUADOR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-018509f3-aef0-40d9-a273-2d152d0c1e8f?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/evaluador",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"evaluadorId\":  \"66bdfb0a9dc41f550e6be4b4\",\r\n    \"empleadoId\": \"66be82b1ada6df2338a762b7\",\r\n    \"tipoEvaluador\": \"Supervisor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/evaluador"
+			},
+			"response": [
+				{
+					"name": "crear evaluador",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluadorId\":  \"66bdfb0a9dc41f550e6be4b4\",\r\n    \"empleadoId\": \"66be82b1ada6df2338a762b7\",\r\n    \"tipoEvaluador\": \"Supervisor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/evaluador"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "45"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:41:54 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724193807"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "311"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"137-Y9QkETk2iteHN4E+oCPPM51JidI\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluador creado\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"evaluadorId\": \"66bdfb0a9dc41f550e6be4b4\",\n        \"tipoEvaluador\": \"Supervisor\",\n        \"empleadoId\": \"66be82b1ada6df2338a762b7\",\n        \"_id\": \"66c51bb2fc12ec09a5c23417\",\n        \"fechaCreacion\": \"2024-08-20T22:41:54.503Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:41:54.503Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluador",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{Url}}/api/evaluador"
+			},
+			"response": [
+				{
+					"name": "Obtener evaluadores",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Url}}/api/evaluador"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "44"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:42:21 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724193807"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2726"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aa6-5HO7lue0/5oAc2fKWliF/D4MyVo\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluadores listados\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66be86325fd3bfc1ddfd8a3a\",\n            \"evaluadorId\": {\n                \"_id\": \"66be82b1ada6df2338a762b7\",\n                \"email\": \"empleado2@gmail.com\",\n                \"nombres\": \"empleado2\",\n                \"apellidos\": \"empleado2\",\n                \"puesto\": \"Reclutador\",\n                \"departamento\": \"Recursos Humanos\",\n                \"salario\": 2500,\n                \"evaluaciones\": [],\n                \"fechaContrato\": \"2024-08-15T22:35:29.646Z\",\n                \"fechaCreacion\": \"2024-08-15T22:35:29.646Z\",\n                \"fechaActualizacion\": \"2024-08-15T22:35:29.646Z\",\n                \"__v\": 0\n            },\n            \"tipoEvaluador\": \"Subordinado\",\n            \"empleadoId\": {\n                \"_id\": \"66bdfb0a9dc41f550e6be4b4\",\n                \"email\": \"albi.arias@gmail.com\",\n                \"nombres\": \"Albimar Daniela\",\n                \"apellidos\": \"Arias\",\n                \"puesto\": \"Gerente General\",\n                \"departamento\": \"Dirección General\",\n                \"salario\": 2500,\n                \"evaluaciones\": [],\n                \"fechaContrato\": \"2024-08-15T12:56:42.127Z\",\n                \"fechaCreacion\": \"2024-08-15T12:56:42.127Z\",\n                \"fechaActualizacion\": \"2024-08-15T13:29:22.165Z\",\n                \"__v\": 0\n            },\n            \"fechaCreacion\": \"2024-08-15T23:03:37.976Z\",\n            \"fechaActualizacion\": \"2024-08-15T23:56:51.956Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66be894a6c5649fdf7326145\",\n            \"evaluadorId\": {\n                \"_id\": \"66be82a5ada6df2338a762b5\",\n                \"email\": \"empleado1@gmail.com\",\n                \"nombres\": \"empleado1\",\n                \"apellidos\": \"empleado1\",\n                \"puesto\": \"Reclutador\",\n                \"departamento\": \"Recursos Humanos\",\n                \"salario\": 2500,\n                \"evaluaciones\": [],\n                \"fechaContrato\": \"2024-08-15T22:35:17.137Z\",\n                \"fechaCreacion\": \"2024-08-15T22:35:17.137Z\",\n                \"fechaActualizacion\": \"2024-08-15T22:35:17.137Z\",\n                \"__v\": 0\n            },\n            \"tipoEvaluador\": \"Supervisor\",\n            \"empleadoId\": {\n                \"_id\": \"66bdfb0a9dc41f550e6be4b4\",\n                \"email\": \"albi.arias@gmail.com\",\n                \"nombres\": \"Albimar Daniela\",\n                \"apellidos\": \"Arias\",\n                \"puesto\": \"Gerente General\",\n                \"departamento\": \"Dirección General\",\n                \"salario\": 2500,\n                \"evaluaciones\": [],\n                \"fechaContrato\": \"2024-08-15T12:56:42.127Z\",\n                \"fechaCreacion\": \"2024-08-15T12:56:42.127Z\",\n                \"fechaActualizacion\": \"2024-08-15T13:29:22.165Z\",\n                \"__v\": 0\n            },\n            \"fechaCreacion\": \"2024-08-15T23:03:37.976Z\",\n            \"fechaActualizacion\": \"2024-08-15T23:03:37.976Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66c51bb2fc12ec09a5c23417\",\n            \"evaluadorId\": {\n                \"_id\": \"66bdfb0a9dc41f550e6be4b4\",\n                \"email\": \"albi.arias@gmail.com\",\n                \"nombres\": \"Albimar Daniela\",\n                \"apellidos\": \"Arias\",\n                \"puesto\": \"Gerente General\",\n                \"departamento\": \"Dirección General\",\n                \"salario\": 2500,\n                \"evaluaciones\": [],\n                \"fechaContrato\": \"2024-08-15T12:56:42.127Z\",\n                \"fechaCreacion\": \"2024-08-15T12:56:42.127Z\",\n                \"fechaActualizacion\": \"2024-08-15T13:29:22.165Z\",\n                \"__v\": 0\n            },\n            \"tipoEvaluador\": \"Supervisor\",\n            \"empleadoId\": {\n                \"_id\": \"66be82b1ada6df2338a762b7\",\n                \"email\": \"empleado2@gmail.com\",\n                \"nombres\": \"empleado2\",\n                \"apellidos\": \"empleado2\",\n                \"puesto\": \"Reclutador\",\n                \"departamento\": \"Recursos Humanos\",\n                \"salario\": 2500,\n                \"evaluaciones\": [],\n                \"fechaContrato\": \"2024-08-15T22:35:29.646Z\",\n                \"fechaCreacion\": \"2024-08-15T22:35:29.646Z\",\n                \"fechaActualizacion\": \"2024-08-15T22:35:29.646Z\",\n                \"__v\": 0\n            },\n            \"fechaCreacion\": \"2024-08-20T22:41:54.503Z\",\n            \"fechaActualizacion\": \"2024-08-20T22:41:54.503Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluador/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/evaluador/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluador",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c51bb2fc12ec09a5c23417"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obyener un evaluador",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/evaluador/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"evaluador",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c51bb2fc12ec09a5c23417"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "42"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:43:02 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724193807"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "953"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b9-360W0z3ozu+ZLkApOkZeqIJd6+o\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluador obtenido\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c51bb2fc12ec09a5c23417\",\n        \"evaluadorId\": {\n            \"_id\": \"66bdfb0a9dc41f550e6be4b4\",\n            \"email\": \"albi.arias@gmail.com\",\n            \"nombres\": \"Albimar Daniela\",\n            \"apellidos\": \"Arias\",\n            \"puesto\": \"Gerente General\",\n            \"departamento\": \"Dirección General\",\n            \"salario\": 2500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-15T12:56:42.127Z\",\n            \"fechaCreacion\": \"2024-08-15T12:56:42.127Z\",\n            \"fechaActualizacion\": \"2024-08-15T13:29:22.165Z\",\n            \"__v\": 0\n        },\n        \"tipoEvaluador\": \"Supervisor\",\n        \"empleadoId\": {\n            \"_id\": \"66be82b1ada6df2338a762b7\",\n            \"email\": \"empleado2@gmail.com\",\n            \"nombres\": \"empleado2\",\n            \"apellidos\": \"empleado2\",\n            \"puesto\": \"Reclutador\",\n            \"departamento\": \"Recursos Humanos\",\n            \"salario\": 2500,\n            \"evaluaciones\": [],\n            \"fechaContrato\": \"2024-08-15T22:35:29.646Z\",\n            \"fechaCreacion\": \"2024-08-15T22:35:29.646Z\",\n            \"fechaActualizacion\": \"2024-08-15T22:35:29.646Z\",\n            \"__v\": 0\n        },\n        \"fechaCreacion\": \"2024-08-20T22:41:54.503Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:41:54.503Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluador/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"evaluadorId\":  \"66c51bb2fc12ec09a5c23417\",\r\n    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\r\n    \"tipoEvaluador\": \"Subordinado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/evaluador/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluador",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66be86325fd3bfc1ddfd8a3a"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "actualizar evalador",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluadorId\":  \"66c51bb2fc12ec09a5c23417\",\r\n    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\r\n    \"tipoEvaluador\": \"Subordinado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/evaluador/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"evaluador",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66be86325fd3bfc1ddfd8a3a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:43:35 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724193996"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "317"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13d-y5jDO/wYsV8X8Ejxv2cuDjGGVug\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluador actualizado\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66be86325fd3bfc1ddfd8a3a\",\n        \"evaluadorId\": \"66c51bb2fc12ec09a5c23417\",\n        \"tipoEvaluador\": \"Subordinado\",\n        \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n        \"fechaCreacion\": \"2024-08-15T23:03:37.976Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:43:35.733Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluador/empleado/:empleadoId/multiple",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/evaluador/empleado/:empleadoId/multiple",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluador",
+						"empleado",
+						":empleadoId",
+						"multiple"
+					],
+					"variable": [
+						{
+							"key": "empleadoId",
+							"value": "66bdfb0a9dc41f550e6be4b4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/evaluations/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/evaluador/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluador",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66b5a05c6c19728cfacdd056"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/evaluador/empleado/:empleadoId/multiple",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"evaluadores\": [\r\n        {\r\n            \"evaluadorId\": \"66be82b1ada6df2338a762b7\",\r\n            \"tipoEvaluador\": \"Colega\"\r\n        },\r\n        {\r\n            \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\r\n            \"tipoEvaluador\": \"Supervisor\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/evaluador/empleado/:empleadoId/multiple",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluador",
+						"empleado",
+						":empleadoId",
+						"multiple"
+					],
+					"variable": [
+						{
+							"key": "empleadoId",
+							"value": "66bdfb0a9dc41f550e6be4b4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

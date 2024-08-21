@@ -1,0 +1,504 @@
+{
+	"info": {
+		"_postman_id": "bee63186-03a4-41cb-afeb-e4f7d5f280e5",
+		"name": "COMPETENCIAS",
+		"description": "## Documentación de la Colección de Competencias\n\n### Descripción General\n\nLa colección de COMPETENCIAS almacena la información detallada de cada una de las competencias evaluadas en el sistema de evaluación 360 grados. Cada competencia está asociada a un conjunto de preguntas que permiten medir el nivel de desarrollo de esa competencia en un evaluado.\n\n### Estructura de la Competencia\n\nCada documento dentro de la colección de COMPETENCIAS tiene la siguiente estructura:\n\nJSON\n\n``` json\n{\n    \"_id\": ObjectId, // Identificador único de la competencia\n    \"nombre\": String, // Nombre corto y descriptivo de la competencia (e.g., \"Comunicación\")\n    \"descripcion\": String, // Descripción detallada de la competencia, incluyendo el tipo de preguntas asociadas (e.g., \"Preguntas relacionadas al área de Comunicación\")\n    \"estado\": Boolean, // Indica si la competencia está activa (true) o inactiva (false) en el sistema\n    \"fechaCreacion\": Date, // Fecha y hora de creación del registro\n    \"fechaActualizacion\": Date, // Fecha y hora de la última actualización del registro\n    \"__v\": Number // Versión del documento (utilizado por Mongoose para el control de versiones)\n}\n\n ```\n\n### Campos Detallados\n\n- **_id:** Identificador único generado automáticamente por MongoDB.\n    \n- **nombre:** Cadena de texto que representa el nombre corto y conciso de la competencia.\n    \n- **descripcion:** Cadena de texto que proporciona una descripción detallada de la competencia, incluyendo el tipo de preguntas asociadas. Esta descripción es fundamental para comprender el alcance y el propósito de la competencia.\n    \n- **estado:** Valor booleano que indica si la competencia está activa en el sistema. Las competencias inactivas no se utilizarán en las evaluaciones.\n    \n- **fechaCreacion:** Fecha y hora en que se creó el registro de la competencia en la base de datos.\n    \n- **fechaActualizacion:** Fecha y hora de la última modificación del registro de la competencia.\n    \n\n### Ejemplos de Competencias\n\nJSON\n\n``` json\n// Competencia de Comunicación\n{\n    \"nombre\": \"Comunicación\",\n    \"descripcion\": \"Evalúa la capacidad de expresar ideas de manera clara y concisa, tanto de forma oral como escrita. Incluye preguntas sobre habilidades de escucha activa, presentación en público y redacción de informes.\",\n    \"estado\": true,\n    // ... otros campos\n}\n// Competencia de Trabajo en Equipo\n{\n    \"nombre\": \"Trabajo en Equipo\",\n    \"descripcion\": \"Mide la habilidad para colaborar con otros, resolver conflictos y contribuir al éxito del equipo. Incluye preguntas sobre cooperación, resolución de problemas en grupo y liderazgo.\",\n    \"estado\": true,\n    // ... otros campos\n}\n\n ```\n\n### Uso en la API\n\nLa colección de COMPETENCIAS se utiliza en la API para:\n\n- **Obtener:** Listar todas las competencias, obtener una competencia específica por su ID, o filtrar las competencias por estado o otros criterios.\n    \n- **Crear:** Agregar una nueva competencia al sistema.\n    \n- **Actualizar:** Modificar la información de una competencia existente.\n    \n- **Eliminar:** Eliminar una competencia del sistema.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-bee63186-03a4-41cb-afeb-e4f7d5f280e5?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/competencia",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{Url}}/api/competencia"
+			},
+			"response": [
+				{
+					"name": "Lista de compentencia",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Url}}/api/competencia"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:51:39 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118880"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1076"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"434-O3cVknVHedJMLSkJfCAwWi8fjlo\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Lista de competencias obtenida exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n            \"nombre\": \"Comunicación\",\n            \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n            \"fechaActualizacion\": \"2024-08-16T02:27:58.353Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n            \"nombre\": \"Trabajo en equipo\",\n            \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T02:28:32.768Z\",\n            \"fechaActualizacion\": \"2024-08-16T02:28:32.768Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n            \"nombre\": \"Orientación a resultados\",\n            \"descripcion\": \"Preguntas realacionadas al area de Orientación a resultados\",\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T02:28:42.574Z\",\n            \"fechaActualizacion\": \"2024-08-16T02:28:42.574Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66beb965ca505cb2c9a2e4f7\",\n            \"nombre\": \"Adaptabilidad\",\n            \"descripcion\": \"Preguntas realacionadas al area de Adaptabilidad\",\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T02:28:53.661Z\",\n            \"fechaActualizacion\": \"2024-08-16T02:28:53.662Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/competencia/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/competencia/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"competencia",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66beb92eca505cb2c9a2e4ef"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Competencia obtenido exitosamente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/competencia/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"competencia",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66beb92eca505cb2c9a2e4ef"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:52:30 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118880"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "322"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"142-E3TqYRUCkuJxjRlQsVBG3fn8l0w\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Competencia obtenido exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n        \"nombre\": \"Comunicación\",\n        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n        \"estado\": true,\n        \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n        \"fechaActualizacion\": \"2024-08-16T02:27:58.353Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/competencia/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Comunicación\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/competencia/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"competencia",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66beb92eca505cb2c9a2e4ef"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Competencia actualizado exitosamente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Comunicación\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/competencia/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"competencia",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66beb92eca505cb2c9a2e4ef"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "44"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:53:20 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118880"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "325"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"145-WoCN1c3sfpJhHH2kj6D90M3JraQ\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Competencia actualizado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n        \"nombre\": \"Comunicación\",\n        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n        \"estado\": true,\n        \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n        \"fechaActualizacion\": \"2024-08-20T01:53:20.022Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api/competencia/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/competencia/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"competencia",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c3f755adbbc77cc4a6c091"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Competencia eliminado",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/competencia/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"competencia",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c3f755adbbc77cc4a6c091"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:54:51 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724119072"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"133-HQcpc+MPy2jG58TLItFKyHO4VGA\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Competencia eliminado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c3f755adbbc77cc4a6c091\",\n        \"nombre\": \"test1\",\n        \"descripcion\": \"Preguntas realacionadas al area de test1\",\n        \"estado\": true,\n        \"fechaCreacion\": \"2024-08-20T01:54:29.638Z\",\n        \"fechaActualizacion\": \"2024-08-20T01:54:29.638Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/competencia",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"test1\",\r\n    \"descripcion\": \"Preguntas realacionadas al area de test1\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/competencia"
+			},
+			"response": [
+				{
+					"name": "Competencia creado exitosamente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"test1\",\r\n    \"descripcion\": \"Preguntas realacionadas al area de test1\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/competencia"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "43"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:54:29 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118880"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"130-4ILjsoVNOoW8RetLe5yjbRBSZ5U\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Competencia creado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"nombre\": \"test1\",\n        \"descripcion\": \"Preguntas realacionadas al area de test1\",\n        \"estado\": true,\n        \"_id\": \"66c3f755adbbc77cc4a6c091\",\n        \"fechaCreacion\": \"2024-08-20T01:54:29.638Z\",\n        \"fechaActualizacion\": \"2024-08-20T01:54:29.638Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}

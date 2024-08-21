@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "0e515968-53ce-41b4-ba2f-fdad97e4e4fa",
+		"name": "AUTH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-0e515968-53ce-41b4-ba2f-fdad97e4e4fa?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"empleadoY\",\r\n    \"contraseña\": \"xxxxxxxxx\",\r\n    \"nombre\": \"empleado\",\r\n    \"apellido\": \"Y\",\r\n    \"email\": \"y@gmail.com\",\r\n    \"rol\": \"employee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/auth/register"
+			},
+			"response": [
+				{
+					"name": "Usuario Creado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"empleadoY\",\r\n    \"contraseña\": \"empleadoY\",\r\n    \"nombre\": \"empleado\",\r\n    \"apellido\": \"Y\",\r\n    \"email\": \"y@gmail.com\",\r\n    \"rol\": \"employee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/auth/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "48"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:49:19 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118689"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "213"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d5-0gw3xY2VFVn+rin6jYphe6iqXj4\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Usuario registrado exitosamente.\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"id\": \"66c3f61fadbbc77cc4a6c087\",\n        \"usuario\": \"empleadoY\",\n        \"rol\": \"employee\",\n        \"nombre\": \"empleado\",\n        \"apellido\": \"Y\",\n        \"email\": \"y@gmail.com\"\n    }\n}"
+				},
+				{
+					"name": "Usuario existente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"empleadoX\",\r\n    \"contraseña\": \"empleadoX\",\r\n    \"nombre\": \"empleado\",\r\n    \"apellido\": \"X\",\r\n    \"email\": \"x@gmail.com\",\r\n    \"rol\": \"employee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/auth/register"
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:48:28 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118689"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-5NqmHTZpDDMHp2x0pcnEIlcemp4\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El nombre de usuario ya está en uso.\",\n    \"status\": \"failed\",\n    \"code\": 409,\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"administrador1\",\r\n    \"contraseña\": \"administrador1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/auth/login"
+			},
+			"response": [
+				{
+					"name": "Login Correcto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"administrador1\",\r\n    \"contraseña\": \"administrador1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/auth/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:50:37 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118689"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "298"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12a-mABNe5bAl5FEA5LxG7Jw150ewJU\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Inicio de sesión exitoso.\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"token\": \"XXxxxxxxxxxxxx\"\n    }\n}"
+				},
+				{
+					"name": "Credenciales Invalidas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"administrador1\",\r\n    \"contraseña\": \"administradorX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/auth/login"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "46"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 01:51:05 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724118689"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-WzzSw0IHlk3quJ7HtR6oyJuHlcs\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Credenciales inválidas.\",\n    \"status\": \"failed\",\n    \"code\": 400,\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,3989 @@
+openapi: 3.0.0
+info:
+  title: API de Evaluación 360 Grados
+  description: Documentación de la API para el sistema de evaluación 360 grados
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Servidor de desarrollo
+components:
+  securitySchemes:
+    bearerAuth:      
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+paths:
+  /api/auth/register:
+    post:
+      tags:
+        - AUTH
+      summary: Registro de usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                usuario: empleadoY
+                contraseña: empleadoY
+                nombre: empleado
+                apellido: "Y"
+                email: y@gmail.com
+                rol: employee
+      responses:
+        "201":
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "48"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:49:19 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118689"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "213"
+            ETag:
+              schema:
+                type: string
+                example: W/"d5-0gw3xY2VFVn+rin6jYphe6iqXj4"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Usuario registrado exitosamente.
+                status: success
+                code: 201
+                data:
+                  id: 66c3f61fadbbc77cc4a6c087
+                  usuario: empleadoY
+                  rol: employee
+                  nombre: empleado
+                  apellido: "Y"
+                  email: y@gmail.com
+        "409":
+          description: Conflict
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "49"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:48:28 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118689"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "92"
+            ETag:
+              schema:
+                type: string
+                example: W/"5c-5NqmHTZpDDMHp2x0pcnEIlcemp4"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: El nombre de usuario ya está en uso.
+                status: failed
+                code: 409
+                data: null
+  /api/auth/login:
+    post:
+      tags:
+        - AUTH
+      summary: Login de usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                usuario: administrador1
+                contraseña: administrador1
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "47"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:50:37 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118689"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "298"
+            ETag:
+              schema:
+                type: string
+                example: W/"12a-mABNe5bAl5FEA5LxG7Jw150ewJU"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Inicio de sesión exitoso.
+                status: success
+                code: 200
+                data:
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmJkNzY4ZTcwMDY3OTAzNjI1MTQ2OWUiLCJyb2wiOiJhZG1pbiIsInVzdWFyaW8iOiJhZG1pbmlzdHJhZG9yMSIsImlhdCI6MTcyNDExODYzN30.W5DxLPpt-yTo5Ik38hMUx-iFtsqEH6O-pgpvHfpMJEo
+        "400":
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "46"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:51:05 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118689"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "79"
+            ETag:
+              schema:
+                type: string
+                example: W/"4f-WzzSw0IHlk3quJ7HtR6oyJuHlcs"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Credenciales inválidas.
+                status: failed
+                code: 400
+                data: null
+  /api/employees:
+    post:
+      tags:
+        - Empleados
+      summary: Crear un empleado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nombres: empleadoZ
+                apellidos: empleadoZ
+                email: Z@gmail.com
+                telefono: '584127745208'
+                puesto: Reclutador
+                departamento: Recursos Humanos
+                salario: 2500
+      security:
+        - apikeyAuth: []
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '42'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:48:43 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190580'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '413'
+            ETag:
+              schema:
+                type: string
+                example: W/"19d-aRvyPRCxZOjX9OHwGjnYwT0Hc/0"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Empleado creado exitosamente
+                status: success
+                code: 201
+                data:
+                  email: d@gmail.com
+                  nombres: empleadoD
+                  apellidos: empleadoD
+                  puesto: Reclutador
+                  departamento: Recursos Humanos
+                  salario: 2500
+                  evaluaciones: []
+                  _id: 66c50f3be5c649d886020914
+                  fechaContrato: '2024-08-20T21:48:43.145Z'
+                  fechaCreacion: '2024-08-20T21:48:43.145Z'
+                  fechaActualizacion: '2024-08-20T21:48:43.145Z'
+                  __v: 0
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '49'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:49:46 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190767'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '169'
+            ETag:
+              schema:
+                type: string
+                example: W/"a9-Uwri2/dh3j7BEwLR7LISiSkoBsM"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Error en los datos proporcionados
+                status: failed
+                code: 400
+                data:
+                  - type: field
+                    msg: Debe ser un email válido
+                    path: email
+                    location: body
+        '500':
+          description: Internal Server Error
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '41'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:49:10 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190580'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '183'
+            ETag:
+              schema:
+                type: string
+                example: W/"b7-CncAMV9dv1f7nfZAp1TEcF2ltW8"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: >-
+                  Error al crear empleado: E11000 duplicate key error
+                  collection: test.empleados index: email_1 dup key: { email:
+                  "d@gmail.com" }
+                status: error
+                code: 500
+                data: null
+    get:
+      tags:
+        - Empleados
+      summary: Lista los empleados.
+      security:
+        - apikeyAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '48'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:50:52 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190767'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2373'
+            ETag:
+              schema:
+                type: string
+                example: W/"945-LCWFg2xEvxihr1Tukjn55MJFJW0"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Lista de empleados obtenida exitosamente
+                status: success
+                code: 200
+                data:
+                  - _id: 66bdfa9e9dc41f550e6be4b2
+                    email: luis.alvarado@gmail.com
+                    nombres: Luis
+                    apellidos: Alvarado
+                    puesto: Programador
+                    departamento: Informática
+                    salario: 1500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-15T12:54:54.813Z'
+                    fechaCreacion: '2024-08-15T12:54:54.814Z'
+                    fechaActualizacion: '2024-08-15T12:54:54.814Z'
+                    __v: 0
+                    evaluadores: []
+                  - _id: 66bdfb0a9dc41f550e6be4b4
+                    email: albi.arias@gmail.com
+                    nombres: Albimar Daniela
+                    apellidos: Arias
+                    puesto: Gerente General
+                    departamento: Dirección General
+                    salario: 2500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-15T12:56:42.127Z'
+                    fechaCreacion: '2024-08-15T12:56:42.127Z'
+                    fechaActualizacion: '2024-08-15T13:29:22.165Z'
+                    __v: 0
+                    evaluadores:
+                      - _id: 66be86325fd3bfc1ddfd8a3a
+                        evaluadorId: 66be82b1ada6df2338a762b7
+                        tipoEvaluador: Subordinado
+                        empleadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaCreacion: '2024-08-15T23:03:37.976Z'
+                        fechaActualizacion: '2024-08-15T23:56:51.956Z'
+                        __v: 0
+                      - _id: 66be894a6c5649fdf7326145
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        tipoEvaluador: Supervisor
+                        empleadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaCreacion: '2024-08-15T23:03:37.976Z'
+                        fechaActualizacion: '2024-08-15T23:03:37.976Z'
+                        __v: 0
+                  - _id: 66be82a5ada6df2338a762b5
+                    email: empleado1@gmail.com
+                    nombres: empleado1
+                    apellidos: empleado1
+                    puesto: Reclutador
+                    departamento: Recursos Humanos
+                    salario: 2500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-15T22:35:17.137Z'
+                    fechaCreacion: '2024-08-15T22:35:17.137Z'
+                    fechaActualizacion: '2024-08-15T22:35:17.137Z'
+                    __v: 0
+                    evaluadores: []
+                  - _id: 66be82b1ada6df2338a762b7
+                    email: empleado2@gmail.com
+                    nombres: empleado2
+                    apellidos: empleado2
+                    puesto: Reclutador
+                    departamento: Recursos Humanos
+                    salario: 2500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-15T22:35:29.646Z'
+                    fechaCreacion: '2024-08-15T22:35:29.646Z'
+                    fechaActualizacion: '2024-08-15T22:35:29.646Z'
+                    __v: 0
+                    evaluadores: []
+                  - _id: 66c50f3be5c649d886020914
+                    email: d@gmail.com
+                    nombres: empleadoD
+                    apellidos: empleadoD
+                    puesto: Reclutador
+                    departamento: Recursos Humanos
+                    salario: 2500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-20T21:48:43.145Z'
+                    fechaCreacion: '2024-08-20T21:48:43.145Z'
+                    fechaActualizacion: '2024-08-20T21:48:43.145Z'
+                    __v: 0
+                    evaluadores: []
+  /api/employees/{id}:
+    get:
+      tags:
+        - Empleados
+      summary: Obtiene un empleado
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c50f3be5c649d886020914
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '47'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:51:36 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190767'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '415'
+            ETag:
+              schema:
+                type: string
+                example: W/"19f-J1PWo8itv4SEIYcBp+VK4rplVp8"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Empleado obtenido exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c50f3be5c649d886020914
+                  email: d@gmail.com
+                  nombres: empleadoD
+                  apellidos: empleadoD
+                  puesto: Reclutador
+                  departamento: Recursos Humanos
+                  salario: 2500
+                  evaluaciones: []
+                  fechaContrato: '2024-08-20T21:48:43.145Z'
+                  fechaCreacion: '2024-08-20T21:48:43.145Z'
+                  fechaActualizacion: '2024-08-20T21:48:43.145Z'
+                  __v: 0
+    put:
+      tags:
+        - Empleados
+      summary: Actualiza un empleado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nombres: Empleado nuevo
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c50f3be5c649d886020914
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '49'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:52:49 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190950'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '423'
+            ETag:
+              schema:
+                type: string
+                example: W/"1a7-59/5+/xj6EglKreDA9UEEwJ5NsA"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Empleado actualizado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c50f3be5c649d886020914
+                  email: d@gmail.com
+                  nombres: Empleado nuevo
+                  apellidos: empleadoD
+                  puesto: Reclutador
+                  departamento: Recursos Humanos
+                  salario: 2500
+                  evaluaciones: []
+                  fechaContrato: '2024-08-20T21:48:43.145Z'
+                  fechaCreacion: '2024-08-20T21:48:43.145Z'
+                  fechaActualizacion: '2024-08-20T21:52:49.166Z'
+                  __v: 0
+    delete:
+      tags:
+        - Empleados
+      summary: Elimina un empleado
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c50f3be5c649d886020914
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '48'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 21:53:18 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724190950'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '421'
+            ETag:
+              schema:
+                type: string
+                example: W/"1a5-OWeqQT1/JuDvgJEGkJ0r0eO/ivM"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Empleado eliminado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c50f3be5c649d886020914
+                  email: d@gmail.com
+                  nombres: Empleado nuevo
+                  apellidos: empleadoD
+                  puesto: Reclutador
+                  departamento: Recursos Humanos
+                  salario: 2500
+                  evaluaciones: []
+                  fechaContrato: '2024-08-20T21:48:43.145Z'
+                  fechaCreacion: '2024-08-20T21:48:43.145Z'
+                  fechaActualizacion: '2024-08-20T21:52:49.166Z'
+                  __v: 0
+  /api/evaluations:
+    post:
+      tags:
+        - Evaluaciones
+      summary: Crea una evaluación
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                evaluado: 66bdfa9e9dc41f550e6be4b2
+                fechaFinalizacion: '2024-08-20T04:06:45.129Z'
+      security:
+        - apikeyAuth: []
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '48'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:01:52 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724191439'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '309'
+            ETag:
+              schema:
+                type: string
+                example: W/"135-UrHBRRdLIaiwwrSwbtaF0GpRP1c"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluación creada
+                status: success
+                code: 201
+                data:
+                  evaluado: 66bdfa9e9dc41f550e6be4b2
+                  estado: Pendiente
+                  fechaFinalizacion: '2024-08-22T04:06:45.129Z'
+                  _id: 66c5125069bc99323974fa28
+                  fechaCreacion: '2024-08-20T22:01:52.161Z'
+                  fechaActualizacion: '2024-08-20T22:01:52.161Z'
+                  __v: 0
+    get:
+      tags:
+        - Evaluaciones
+      summary: Lista las evaluaciones
+      security:
+        - apikeyAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '43'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:00:13 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724191251'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '12570'
+            ETag:
+              schema:
+                type: string
+                example: W/"311a-rmCNyuOcsFOuBXLtDd+bxRj5k+w"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluaciones listadas
+                status: success
+                code: 200
+                data:
+                  - _id: 66bf690bde58b85c7990c468
+                    evaluado: 66bdfa9e9dc41f550e6be4b2
+                    estado: Pendiente
+                    fechaFinalizacion: '2024-08-20T04:06:45.129Z'
+                    fechaCreacion: '2024-08-16T14:58:19.659Z'
+                    evaluadores: []
+                    preguntas:
+                      - _id: 66bec30fc7f20bdc08c756cc
+                        competenciaId: 66beb92eca505cb2c9a2e4ef
+                        texto: >-
+                          ¿Con qué frecuencia este colaborador expresa sus ideas
+                          de manera clara y concisa?
+                        opciones:
+                          - texto: Nunca
+                            value: 1
+                            _id: 66bec30fc7f20bdc08c756cd
+                          - texto: Rara vez
+                            value: 2
+                            _id: 66bec30fc7f20bdc08c756ce
+                          - texto: A veces
+                            value: 3
+                            _id: 66bec30fc7f20bdc08c756cf
+                          - texto: Frecuentemente
+                            value: 4
+                            _id: 66bec30fc7f20bdc08c756d0
+                          - texto: Siempre
+                            value: 5
+                            _id: 66bec30fc7f20bdc08c756d1
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:10:07.798Z'
+                        fechaActualizacion: '2024-08-16T03:10:07.798Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb92eca505cb2c9a2e4ef
+                          nombre: Comunicación
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:27:58.353Z'
+                          fechaActualizacion: '2024-08-20T01:53:20.022Z'
+                          __v: 0
+                      - _id: 66bec3cdfed88e63a47960ab
+                        competenciaId: 66beb950ca505cb2c9a2e4f3
+                        texto: >-
+                          ¿Qué tan bien colabora este colaborador con sus
+                          compañeros para alcanzar objetivos comunes?
+                        opciones:
+                          - texto: No colabora
+                            value: 1
+                            _id: 66bec3cdfed88e63a47960ac
+                          - texto: Colabora poco
+                            value: 2
+                            _id: 66bec3cdfed88e63a47960ad
+                          - texto: Colabora de manera adecuada
+                            value: 3
+                            _id: 66bec3cdfed88e63a47960ae
+                          - texto: Colabora activamente
+                            value: 4
+                            _id: 66bec3cdfed88e63a47960af
+                          - texto: Es un líder en el equipo
+                            value: 5
+                            _id: 66bec3cdfed88e63a47960b0
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:17.494Z'
+                        fechaActualizacion: '2024-08-16T03:13:17.494Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb950ca505cb2c9a2e4f3
+                          nombre: Trabajo en equipo
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:32.768Z'
+                          fechaActualizacion: '2024-08-16T02:28:32.768Z'
+                          __v: 0
+                      - _id: 66bec3f5fed88e63a47960b9
+                        competenciaId: 66beb95aca505cb2c9a2e4f5
+                        texto: >-
+                          ¿Qué tan comprometido está este colaborador con el
+                          logro de los objetivos establecidos?
+                        opciones:
+                          - texto: No muestra interés
+                            value: 1
+                            _id: 66bec3f5fed88e63a47960ba
+                          - texto: Muestra poco interés
+                            value: 2
+                            _id: 66bec3f5fed88e63a47960bb
+                          - texto: Tiene un interés moderado
+                            value: 3
+                            _id: 66bec3f5fed88e63a47960bc
+                          - texto: Está muy comprometido
+                            value: 4
+                            _id: 66bec3f5fed88e63a47960bd
+                          - texto: Es extremadamente comprometido
+                            value: 5
+                            _id: 66bec3f5fed88e63a47960be
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:57.601Z'
+                        fechaActualizacion: '2024-08-16T03:13:57.601Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb95aca505cb2c9a2e4f5
+                          nombre: Orientación a resultados
+                          descripcion: >-
+                            Preguntas realacionadas al area de Orientación a
+                            resultados
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:42.574Z'
+                          fechaActualizacion: '2024-08-16T02:28:42.574Z'
+                          __v: 0
+                    respuestas: []
+                  - _id: 66bed06a5a18ffe7ce7cbcc9
+                    evaluado: 66bdfb0a9dc41f550e6be4b4
+                    estado: enviada
+                    fechaFinalizacion: '2024-08-19T04:06:45.129Z'
+                    fechaCreacion: '2024-08-16T04:07:06.762Z'
+                    evaluadores:
+                      - _id: 66be86325fd3bfc1ddfd8a3a
+                        evaluadorId: 66be82b1ada6df2338a762b7
+                        tipoEvaluador: Subordinado
+                        empleadoId: 66bdfb0a9dc41f550e6be4b4
+                        evaluadorDetalles:
+                          email: empleado2@gmail.com
+                          nombres: empleado2
+                          apellidos: empleado2
+                          puesto: Reclutador
+                          departamento: Recursos Humanos
+                      - _id: 66be894a6c5649fdf7326145
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        tipoEvaluador: Supervisor
+                        empleadoId: 66bdfb0a9dc41f550e6be4b4
+                        evaluadorDetalles:
+                          email: empleado1@gmail.com
+                          nombres: empleado1
+                          apellidos: empleado1
+                          puesto: Reclutador
+                          departamento: Recursos Humanos
+                    preguntas:
+                      - _id: 66bec30fc7f20bdc08c756cc
+                        competenciaId: 66beb92eca505cb2c9a2e4ef
+                        texto: >-
+                          ¿Con qué frecuencia este colaborador expresa sus ideas
+                          de manera clara y concisa?
+                        opciones:
+                          - texto: Nunca
+                            value: 1
+                            _id: 66bec30fc7f20bdc08c756cd
+                          - texto: Rara vez
+                            value: 2
+                            _id: 66bec30fc7f20bdc08c756ce
+                          - texto: A veces
+                            value: 3
+                            _id: 66bec30fc7f20bdc08c756cf
+                          - texto: Frecuentemente
+                            value: 4
+                            _id: 66bec30fc7f20bdc08c756d0
+                          - texto: Siempre
+                            value: 5
+                            _id: 66bec30fc7f20bdc08c756d1
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:10:07.798Z'
+                        fechaActualizacion: '2024-08-16T03:10:07.798Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb92eca505cb2c9a2e4ef
+                          nombre: Comunicación
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:27:58.353Z'
+                          fechaActualizacion: '2024-08-20T01:53:20.022Z'
+                          __v: 0
+                      - _id: 66bec3cdfed88e63a47960ab
+                        competenciaId: 66beb950ca505cb2c9a2e4f3
+                        texto: >-
+                          ¿Qué tan bien colabora este colaborador con sus
+                          compañeros para alcanzar objetivos comunes?
+                        opciones:
+                          - texto: No colabora
+                            value: 1
+                            _id: 66bec3cdfed88e63a47960ac
+                          - texto: Colabora poco
+                            value: 2
+                            _id: 66bec3cdfed88e63a47960ad
+                          - texto: Colabora de manera adecuada
+                            value: 3
+                            _id: 66bec3cdfed88e63a47960ae
+                          - texto: Colabora activamente
+                            value: 4
+                            _id: 66bec3cdfed88e63a47960af
+                          - texto: Es un líder en el equipo
+                            value: 5
+                            _id: 66bec3cdfed88e63a47960b0
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:17.494Z'
+                        fechaActualizacion: '2024-08-16T03:13:17.494Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb950ca505cb2c9a2e4f3
+                          nombre: Trabajo en equipo
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:32.768Z'
+                          fechaActualizacion: '2024-08-16T02:28:32.768Z'
+                          __v: 0
+                      - _id: 66bec3f5fed88e63a47960b9
+                        competenciaId: 66beb95aca505cb2c9a2e4f5
+                        texto: >-
+                          ¿Qué tan comprometido está este colaborador con el
+                          logro de los objetivos establecidos?
+                        opciones:
+                          - texto: No muestra interés
+                            value: 1
+                            _id: 66bec3f5fed88e63a47960ba
+                          - texto: Muestra poco interés
+                            value: 2
+                            _id: 66bec3f5fed88e63a47960bb
+                          - texto: Tiene un interés moderado
+                            value: 3
+                            _id: 66bec3f5fed88e63a47960bc
+                          - texto: Está muy comprometido
+                            value: 4
+                            _id: 66bec3f5fed88e63a47960bd
+                          - texto: Es extremadamente comprometido
+                            value: 5
+                            _id: 66bec3f5fed88e63a47960be
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:57.601Z'
+                        fechaActualizacion: '2024-08-16T03:13:57.601Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb95aca505cb2c9a2e4f5
+                          nombre: Orientación a resultados
+                          descripcion: >-
+                            Preguntas realacionadas al area de Orientación a
+                            resultados
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:42.574Z'
+                          fechaActualizacion: '2024-08-16T02:28:42.574Z'
+                          __v: 0
+                    respuestas:
+                      - _id: 66c241195570d728794180bc
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:40.918Z'
+                        fechaCreacion: '2024-08-18T18:44:40.919Z'
+                        valor: 2
+                      - _id: 66c241195570d728794180bf
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:40.918Z'
+                        fechaCreacion: '2024-08-18T18:44:40.920Z'
+                        valor: 3
+                      - _id: 66c241195570d728794180c2
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:40.918Z'
+                        fechaCreacion: '2024-08-18T18:44:40.920Z'
+                        valor: 4
+                      - _id: 66c2412c5570d7287941bc3c
+                        evaluadorId: 66be86325fd3bfc1ddfd8a3a
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:59.480Z'
+                        fechaCreacion: '2024-08-18T18:44:59.480Z'
+                        valor: 3
+                      - _id: 66c2412c5570d7287941bc3d
+                        evaluadorId: 66be86325fd3bfc1ddfd8a3a
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:59.480Z'
+                        fechaCreacion: '2024-08-18T18:44:59.481Z'
+                        valor: 1
+                      - _id: 66c2412c5570d7287941bc40
+                        evaluadorId: 66be86325fd3bfc1ddfd8a3a
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:59.480Z'
+                        fechaCreacion: '2024-08-18T18:44:59.481Z'
+                        valor: 5
+                      - _id: 66c264e55570d72879b2be3f
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        evaluadorId: 66c26454c2557c10a6587f9f
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T21:17:24.573Z'
+                        fechaCreacion: '2024-08-18T21:17:24.575Z'
+                        valor: 2
+                      - _id: 66c264e55570d72879b2be41
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        evaluadorId: 66c26454c2557c10a6587f9f
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T21:17:24.573Z'
+                        fechaCreacion: '2024-08-18T21:17:24.579Z'
+                        valor: 3
+                      - _id: 66c264e55570d72879b2be45
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        evaluadorId: 66c26454c2557c10a6587f9f
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T21:17:24.573Z'
+                        fechaCreacion: '2024-08-18T21:17:24.580Z'
+                        valor: 4
+                  - _id: 66c27c0f21821f3200beef9a
+                    evaluado: 66bdfa9e9dc41f550e6be4b2
+                    estado: Pendiente
+                    fechaFinalizacion: '2024-08-20T04:06:45.129Z'
+                    fechaCreacion: '2024-08-18T22:56:15.953Z'
+                    evaluadores: []
+                    preguntas:
+                      - _id: 66bec30fc7f20bdc08c756cc
+                        competenciaId: 66beb92eca505cb2c9a2e4ef
+                        texto: >-
+                          ¿Con qué frecuencia este colaborador expresa sus ideas
+                          de manera clara y concisa?
+                        opciones:
+                          - texto: Nunca
+                            value: 1
+                            _id: 66bec30fc7f20bdc08c756cd
+                          - texto: Rara vez
+                            value: 2
+                            _id: 66bec30fc7f20bdc08c756ce
+                          - texto: A veces
+                            value: 3
+                            _id: 66bec30fc7f20bdc08c756cf
+                          - texto: Frecuentemente
+                            value: 4
+                            _id: 66bec30fc7f20bdc08c756d0
+                          - texto: Siempre
+                            value: 5
+                            _id: 66bec30fc7f20bdc08c756d1
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:10:07.798Z'
+                        fechaActualizacion: '2024-08-16T03:10:07.798Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb92eca505cb2c9a2e4ef
+                          nombre: Comunicación
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:27:58.353Z'
+                          fechaActualizacion: '2024-08-20T01:53:20.022Z'
+                          __v: 0
+                      - _id: 66bec3cdfed88e63a47960ab
+                        competenciaId: 66beb950ca505cb2c9a2e4f3
+                        texto: >-
+                          ¿Qué tan bien colabora este colaborador con sus
+                          compañeros para alcanzar objetivos comunes?
+                        opciones:
+                          - texto: No colabora
+                            value: 1
+                            _id: 66bec3cdfed88e63a47960ac
+                          - texto: Colabora poco
+                            value: 2
+                            _id: 66bec3cdfed88e63a47960ad
+                          - texto: Colabora de manera adecuada
+                            value: 3
+                            _id: 66bec3cdfed88e63a47960ae
+                          - texto: Colabora activamente
+                            value: 4
+                            _id: 66bec3cdfed88e63a47960af
+                          - texto: Es un líder en el equipo
+                            value: 5
+                            _id: 66bec3cdfed88e63a47960b0
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:17.494Z'
+                        fechaActualizacion: '2024-08-16T03:13:17.494Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb950ca505cb2c9a2e4f3
+                          nombre: Trabajo en equipo
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:32.768Z'
+                          fechaActualizacion: '2024-08-16T02:28:32.768Z'
+                          __v: 0
+                      - _id: 66bec3f5fed88e63a47960b9
+                        competenciaId: 66beb95aca505cb2c9a2e4f5
+                        texto: >-
+                          ¿Qué tan comprometido está este colaborador con el
+                          logro de los objetivos establecidos?
+                        opciones:
+                          - texto: No muestra interés
+                            value: 1
+                            _id: 66bec3f5fed88e63a47960ba
+                          - texto: Muestra poco interés
+                            value: 2
+                            _id: 66bec3f5fed88e63a47960bb
+                          - texto: Tiene un interés moderado
+                            value: 3
+                            _id: 66bec3f5fed88e63a47960bc
+                          - texto: Está muy comprometido
+                            value: 4
+                            _id: 66bec3f5fed88e63a47960bd
+                          - texto: Es extremadamente comprometido
+                            value: 5
+                            _id: 66bec3f5fed88e63a47960be
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:57.601Z'
+                        fechaActualizacion: '2024-08-16T03:13:57.601Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb95aca505cb2c9a2e4f5
+                          nombre: Orientación a resultados
+                          descripcion: >-
+                            Preguntas realacionadas al area de Orientación a
+                            resultados
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:42.574Z'
+                          fechaActualizacion: '2024-08-16T02:28:42.574Z'
+                          __v: 0
+                    respuestas: []
+  /api/evaluations/{id}:
+    get:
+      tags:
+        - Evaluaciones
+      summary: Obtiene una evaluación
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bed06a5a18ffe7ce7cbcc9
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '49'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:00:58 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724191439'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '6477'
+            ETag:
+              schema:
+                type: string
+                example: W/"194d-TrFhxfzyi6nxy5XpNayWCGFMobU"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluación obtenida
+                status: success
+                code: 200
+                data:
+                  - _id: 66bed06a5a18ffe7ce7cbcc9
+                    evaluado: 66bdfb0a9dc41f550e6be4b4
+                    estado: enviada
+                    fechaFinalizacion: '2024-08-19T04:06:45.129Z'
+                    fechaCreacion: '2024-08-16T04:07:06.762Z'
+                    evaluadores:
+                      - _id: 66be86325fd3bfc1ddfd8a3a
+                        evaluadorId: 66be82b1ada6df2338a762b7
+                        tipoEvaluador: Subordinado
+                        empleadoId: 66bdfb0a9dc41f550e6be4b4
+                        evaluadorDetalles:
+                          email: empleado2@gmail.com
+                          nombres: empleado2
+                          apellidos: empleado2
+                          puesto: Reclutador
+                          departamento: Recursos Humanos
+                      - _id: 66be894a6c5649fdf7326145
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        tipoEvaluador: Supervisor
+                        empleadoId: 66bdfb0a9dc41f550e6be4b4
+                        evaluadorDetalles:
+                          email: empleado1@gmail.com
+                          nombres: empleado1
+                          apellidos: empleado1
+                          puesto: Reclutador
+                          departamento: Recursos Humanos
+                    preguntas:
+                      - _id: 66bec30fc7f20bdc08c756cc
+                        competenciaId: 66beb92eca505cb2c9a2e4ef
+                        texto: >-
+                          ¿Con qué frecuencia este colaborador expresa sus ideas
+                          de manera clara y concisa?
+                        opciones:
+                          - texto: Nunca
+                            value: 1
+                            _id: 66bec30fc7f20bdc08c756cd
+                          - texto: Rara vez
+                            value: 2
+                            _id: 66bec30fc7f20bdc08c756ce
+                          - texto: A veces
+                            value: 3
+                            _id: 66bec30fc7f20bdc08c756cf
+                          - texto: Frecuentemente
+                            value: 4
+                            _id: 66bec30fc7f20bdc08c756d0
+                          - texto: Siempre
+                            value: 5
+                            _id: 66bec30fc7f20bdc08c756d1
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:10:07.798Z'
+                        fechaActualizacion: '2024-08-16T03:10:07.798Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb92eca505cb2c9a2e4ef
+                          nombre: Comunicación
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:27:58.353Z'
+                          fechaActualizacion: '2024-08-20T01:53:20.022Z'
+                          __v: 0
+                      - _id: 66bec3cdfed88e63a47960ab
+                        competenciaId: 66beb950ca505cb2c9a2e4f3
+                        texto: >-
+                          ¿Qué tan bien colabora este colaborador con sus
+                          compañeros para alcanzar objetivos comunes?
+                        opciones:
+                          - texto: No colabora
+                            value: 1
+                            _id: 66bec3cdfed88e63a47960ac
+                          - texto: Colabora poco
+                            value: 2
+                            _id: 66bec3cdfed88e63a47960ad
+                          - texto: Colabora de manera adecuada
+                            value: 3
+                            _id: 66bec3cdfed88e63a47960ae
+                          - texto: Colabora activamente
+                            value: 4
+                            _id: 66bec3cdfed88e63a47960af
+                          - texto: Es un líder en el equipo
+                            value: 5
+                            _id: 66bec3cdfed88e63a47960b0
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:17.494Z'
+                        fechaActualizacion: '2024-08-16T03:13:17.494Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb950ca505cb2c9a2e4f3
+                          nombre: Trabajo en equipo
+                          descripcion: Preguntas realacionadas al area de Comunicación
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:32.768Z'
+                          fechaActualizacion: '2024-08-16T02:28:32.768Z'
+                          __v: 0
+                      - _id: 66bec3f5fed88e63a47960b9
+                        competenciaId: 66beb95aca505cb2c9a2e4f5
+                        texto: >-
+                          ¿Qué tan comprometido está este colaborador con el
+                          logro de los objetivos establecidos?
+                        opciones:
+                          - texto: No muestra interés
+                            value: 1
+                            _id: 66bec3f5fed88e63a47960ba
+                          - texto: Muestra poco interés
+                            value: 2
+                            _id: 66bec3f5fed88e63a47960bb
+                          - texto: Tiene un interés moderado
+                            value: 3
+                            _id: 66bec3f5fed88e63a47960bc
+                          - texto: Está muy comprometido
+                            value: 4
+                            _id: 66bec3f5fed88e63a47960bd
+                          - texto: Es extremadamente comprometido
+                            value: 5
+                            _id: 66bec3f5fed88e63a47960be
+                        estado: true
+                        fechaCreacion: '2024-08-16T03:13:57.601Z'
+                        fechaActualizacion: '2024-08-16T03:13:57.601Z'
+                        __v: 0
+                        competenciaDetalles:
+                          _id: 66beb95aca505cb2c9a2e4f5
+                          nombre: Orientación a resultados
+                          descripcion: >-
+                            Preguntas realacionadas al area de Orientación a
+                            resultados
+                          estado: true
+                          fechaCreacion: '2024-08-16T02:28:42.574Z'
+                          fechaActualizacion: '2024-08-16T02:28:42.574Z'
+                          __v: 0
+                    respuestas:
+                      - _id: 66c241195570d728794180bc
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:40.918Z'
+                        fechaCreacion: '2024-08-18T18:44:40.919Z'
+                        valor: 2
+                      - _id: 66c241195570d728794180bf
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:40.918Z'
+                        fechaCreacion: '2024-08-18T18:44:40.920Z'
+                        valor: 3
+                      - _id: 66c241195570d728794180c2
+                        evaluadorId: 66be82a5ada6df2338a762b5
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:40.918Z'
+                        fechaCreacion: '2024-08-18T18:44:40.920Z'
+                        valor: 4
+                      - _id: 66c2412c5570d7287941bc3c
+                        evaluadorId: 66be86325fd3bfc1ddfd8a3a
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:59.480Z'
+                        fechaCreacion: '2024-08-18T18:44:59.480Z'
+                        valor: 3
+                      - _id: 66c2412c5570d7287941bc3d
+                        evaluadorId: 66be86325fd3bfc1ddfd8a3a
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:59.480Z'
+                        fechaCreacion: '2024-08-18T18:44:59.481Z'
+                        valor: 1
+                      - _id: 66c2412c5570d7287941bc40
+                        evaluadorId: 66be86325fd3bfc1ddfd8a3a
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T18:44:59.480Z'
+                        fechaCreacion: '2024-08-18T18:44:59.481Z'
+                        valor: 5
+                      - _id: 66c264e55570d72879b2be3f
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        evaluadorId: 66c26454c2557c10a6587f9f
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T21:17:24.573Z'
+                        fechaCreacion: '2024-08-18T21:17:24.575Z'
+                        valor: 2
+                      - _id: 66c264e55570d72879b2be41
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        evaluadorId: 66c26454c2557c10a6587f9f
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T21:17:24.573Z'
+                        fechaCreacion: '2024-08-18T21:17:24.579Z'
+                        valor: 3
+                      - _id: 66c264e55570d72879b2be45
+                        evaluacionId: 66bed06a5a18ffe7ce7cbcc9
+                        evaluadorId: 66c26454c2557c10a6587f9f
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                        __v: 0
+                        evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                        fechaActualizacion: '2024-08-18T21:17:24.573Z'
+                        fechaCreacion: '2024-08-18T21:17:24.580Z'
+                        valor: 4
+    put:
+      tags:
+        - Evaluaciones
+      summary: Actualiza una evaluacion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                estado: Pendiente
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bed06a5a18ffe7ce7cbcc9
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '46'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:02:40 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724191439'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '314'
+            ETag:
+              schema:
+                type: string
+                example: W/"13a-9A2TciMHOvMWm5TPslnXocH0AGw"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluación actualizada
+                status: success
+                code: 200
+                data:
+                  _id: 66c5125069bc99323974fa28
+                  evaluado: 66bdfa9e9dc41f550e6be4b2
+                  estado: Pendiente
+                  fechaFinalizacion: '2024-08-22T04:06:45.129Z'
+                  fechaCreacion: '2024-08-20T22:01:52.161Z'
+                  fechaActualizacion: '2024-08-20T22:02:40.922Z'
+                  __v: 0
+    delete:
+      tags:
+        - Evaluaciones
+      summary: Elimina una evaluacion
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66b5a05c6c19728cfacdd056
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '44'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:03:28 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724191439'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '311'
+            ETag:
+              schema:
+                type: string
+                example: W/"137-jIqN7LGjjsdGrvY/aPpYzzWTIHc"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluación obtenida
+                status: success
+                code: 200
+                data:
+                  _id: 66c5125069bc99323974fa28
+                  evaluado: 66bdfa9e9dc41f550e6be4b2
+                  estado: Pendiente
+                  fechaFinalizacion: '2024-08-22T04:06:45.129Z'
+                  fechaCreacion: '2024-08-20T22:01:52.161Z'
+                  fechaActualizacion: '2024-08-20T22:02:40.922Z'
+                  __v: 0
+  /api/evaluations/{id}/submit:
+    post:
+      tags:
+        - Evaluaciones
+      summary: Se encarga de enviar las respuestas de una evaluacion.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                evaluadorId: 66c26454c2557c10a6587f9f
+                evaluadoId: 66bdfb0a9dc41f550e6be4b4
+                respuestas:
+                  - preguntaId: 66bec30fc7f20bdc08c756cc
+                    value: 2
+                  - preguntaId: 66bec3cdfed88e63a47960ab
+                    value: 3
+                  - preguntaId: 66bec3f5fed88e63a47960b9
+                    value: 4
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bed06a5a18ffe7ce7cbcc9
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '45'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:03:05 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724191439'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '73'
+            ETag:
+              schema:
+                type: string
+                example: W/"49-7F0M6rkaFsi1weDYTNKE1KVuANQ"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluación enviada
+                status: success
+                code: 200
+                data: []
+  /api/evaluador:
+    post:
+      tags:
+        - Evaluador
+      summary: Asigna un evaluador a un empleado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                evaluadorId: 66be82b1ada6df2338a762b7
+                empleadoId: 66bdfb0a9dc41f550e6be4b4
+                tipoEvaluador: Supervisor
+      security:
+        - apikeyAuth: []
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '45'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:41:54 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724193807'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '311'
+            ETag:
+              schema:
+                type: string
+                example: W/"137-Y9QkETk2iteHN4E+oCPPM51JidI"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluador creado
+                status: success
+                code: 201
+                data:
+                  evaluadorId: 66bdfb0a9dc41f550e6be4b4
+                  tipoEvaluador: Supervisor
+                  empleadoId: 66be82b1ada6df2338a762b7
+                  _id: 66c51bb2fc12ec09a5c23417
+                  fechaCreacion: '2024-08-20T22:41:54.503Z'
+                  fechaActualizacion: '2024-08-20T22:41:54.503Z'
+                  __v: 0
+    get:
+      tags:
+        - Evaluador
+      summary: Lista los evaluadores
+      security:
+        - apikeyAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '44'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:42:21 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724193807'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2726'
+            ETag:
+              schema:
+                type: string
+                example: W/"aa6-5HO7lue0/5oAc2fKWliF/D4MyVo"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluadores listados
+                status: success
+                code: 200
+                data:
+                  - _id: 66be86325fd3bfc1ddfd8a3a
+                    evaluadorId:
+                      _id: 66be82b1ada6df2338a762b7
+                      email: empleado2@gmail.com
+                      nombres: empleado2
+                      apellidos: empleado2
+                      puesto: Reclutador
+                      departamento: Recursos Humanos
+                      salario: 2500
+                      evaluaciones: []
+                      fechaContrato: '2024-08-15T22:35:29.646Z'
+                      fechaCreacion: '2024-08-15T22:35:29.646Z'
+                      fechaActualizacion: '2024-08-15T22:35:29.646Z'
+                      __v: 0
+                    tipoEvaluador: Subordinado
+                    empleadoId:
+                      _id: 66bdfb0a9dc41f550e6be4b4
+                      email: albi.arias@gmail.com
+                      nombres: Albimar Daniela
+                      apellidos: Arias
+                      puesto: Gerente General
+                      departamento: Dirección General
+                      salario: 2500
+                      evaluaciones: []
+                      fechaContrato: '2024-08-15T12:56:42.127Z'
+                      fechaCreacion: '2024-08-15T12:56:42.127Z'
+                      fechaActualizacion: '2024-08-15T13:29:22.165Z'
+                      __v: 0
+                    fechaCreacion: '2024-08-15T23:03:37.976Z'
+                    fechaActualizacion: '2024-08-15T23:56:51.956Z'
+                    __v: 0
+                  - _id: 66be894a6c5649fdf7326145
+                    evaluadorId:
+                      _id: 66be82a5ada6df2338a762b5
+                      email: empleado1@gmail.com
+                      nombres: empleado1
+                      apellidos: empleado1
+                      puesto: Reclutador
+                      departamento: Recursos Humanos
+                      salario: 2500
+                      evaluaciones: []
+                      fechaContrato: '2024-08-15T22:35:17.137Z'
+                      fechaCreacion: '2024-08-15T22:35:17.137Z'
+                      fechaActualizacion: '2024-08-15T22:35:17.137Z'
+                      __v: 0
+                    tipoEvaluador: Supervisor
+                    empleadoId:
+                      _id: 66bdfb0a9dc41f550e6be4b4
+                      email: albi.arias@gmail.com
+                      nombres: Albimar Daniela
+                      apellidos: Arias
+                      puesto: Gerente General
+                      departamento: Dirección General
+                      salario: 2500
+                      evaluaciones: []
+                      fechaContrato: '2024-08-15T12:56:42.127Z'
+                      fechaCreacion: '2024-08-15T12:56:42.127Z'
+                      fechaActualizacion: '2024-08-15T13:29:22.165Z'
+                      __v: 0
+                    fechaCreacion: '2024-08-15T23:03:37.976Z'
+                    fechaActualizacion: '2024-08-15T23:03:37.976Z'
+                    __v: 0
+                  - _id: 66c51bb2fc12ec09a5c23417
+                    evaluadorId:
+                      _id: 66bdfb0a9dc41f550e6be4b4
+                      email: albi.arias@gmail.com
+                      nombres: Albimar Daniela
+                      apellidos: Arias
+                      puesto: Gerente General
+                      departamento: Dirección General
+                      salario: 2500
+                      evaluaciones: []
+                      fechaContrato: '2024-08-15T12:56:42.127Z'
+                      fechaCreacion: '2024-08-15T12:56:42.127Z'
+                      fechaActualizacion: '2024-08-15T13:29:22.165Z'
+                      __v: 0
+                    tipoEvaluador: Supervisor
+                    empleadoId:
+                      _id: 66be82b1ada6df2338a762b7
+                      email: empleado2@gmail.com
+                      nombres: empleado2
+                      apellidos: empleado2
+                      puesto: Reclutador
+                      departamento: Recursos Humanos
+                      salario: 2500
+                      evaluaciones: []
+                      fechaContrato: '2024-08-15T22:35:29.646Z'
+                      fechaCreacion: '2024-08-15T22:35:29.646Z'
+                      fechaActualizacion: '2024-08-15T22:35:29.646Z'
+                      __v: 0
+                    fechaCreacion: '2024-08-20T22:41:54.503Z'
+                    fechaActualizacion: '2024-08-20T22:41:54.503Z'
+                    __v: 0
+  /api/evaluador/{id}:
+    get:
+      tags:
+        - Evaluador
+      summary: Obtiene los detalles del Evaluador
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66be86325fd3bfc1ddfd8a3a
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '42'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:43:02 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724193807'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '953'
+            ETag:
+              schema:
+                type: string
+                example: W/"3b9-360W0z3ozu+ZLkApOkZeqIJd6+o"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluador obtenido
+                status: success
+                code: 200
+                data:
+                  _id: 66c51bb2fc12ec09a5c23417
+                  evaluadorId:
+                    _id: 66bdfb0a9dc41f550e6be4b4
+                    email: albi.arias@gmail.com
+                    nombres: Albimar Daniela
+                    apellidos: Arias
+                    puesto: Gerente General
+                    departamento: Dirección General
+                    salario: 2500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-15T12:56:42.127Z'
+                    fechaCreacion: '2024-08-15T12:56:42.127Z'
+                    fechaActualizacion: '2024-08-15T13:29:22.165Z'
+                    __v: 0
+                  tipoEvaluador: Supervisor
+                  empleadoId:
+                    _id: 66be82b1ada6df2338a762b7
+                    email: empleado2@gmail.com
+                    nombres: empleado2
+                    apellidos: empleado2
+                    puesto: Reclutador
+                    departamento: Recursos Humanos
+                    salario: 2500
+                    evaluaciones: []
+                    fechaContrato: '2024-08-15T22:35:29.646Z'
+                    fechaCreacion: '2024-08-15T22:35:29.646Z'
+                    fechaActualizacion: '2024-08-15T22:35:29.646Z'
+                    __v: 0
+                  fechaCreacion: '2024-08-20T22:41:54.503Z'
+                  fechaActualizacion: '2024-08-20T22:41:54.503Z'
+                  __v: 0
+    put:
+      tags:
+        - Evaluador
+      summary: Actualiza un evaluador
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                evaluadorId: 66be82b1ada6df2338a762b7
+                empleadoId: 66bdfb0a9dc41f550e6be4b4
+                tipoEvaluador: Subordinado
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66be86325fd3bfc1ddfd8a3a
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '49'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:43:35 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724193996'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '317'
+            ETag:
+              schema:
+                type: string
+                example: W/"13d-y5jDO/wYsV8X8Ejxv2cuDjGGVug"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Evaluador actualizado
+                status: success
+                code: 200
+                data:
+                  _id: 66be86325fd3bfc1ddfd8a3a
+                  evaluadorId: 66c51bb2fc12ec09a5c23417
+                  tipoEvaluador: Subordinado
+                  empleadoId: 66bdfb0a9dc41f550e6be4b4
+                  fechaCreacion: '2024-08-15T23:03:37.976Z'
+                  fechaActualizacion: '2024-08-20T22:43:35.733Z'
+                  __v: 0
+    delete:
+      tags:
+        - Evaluador
+      summary: Elimina un evaluador
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66b5a05c6c19728cfacdd056
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/evaluador/empleado/{empleadoId}/multiple:
+    delete:
+      tags:
+        - Evaluador
+      summary: Elimina todos los evaluadores relacionados a un empleado
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: empleadoId
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bdfb0a9dc41f550e6be4b4
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Evaluador
+      summary: Asigna multiple evaluadores a un empleado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                evaluadores:
+                  - evaluadorId: 66be82b1ada6df2338a762b7
+                    tipoEvaluador: Colega
+                  - evaluadorId: 66be82a5ada6df2338a762b5
+                    tipoEvaluador: Supervisor
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: empleadoId
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bdfb0a9dc41f550e6be4b4
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notificacion:
+    get:
+      tags:
+        - Notificacion
+      summary: Lista todas las notificaciones
+      security:
+        - apikeyAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '43'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:48:15 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724194206'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '596'
+            ETag:
+              schema:
+                type: string
+                example: W/"254-xyOrJhe/4ZtwFlbRWApUMAs26ho"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Lista de notificacions obtenida exitosamente
+                status: success
+                code: 200
+                data:
+                  - _id: 66c27c1021821f3200beef9c
+                    empleadoId: 66bdfa9e9dc41f550e6be4b2
+                    mensaje: Tienes una evaluación pendiente desde 18/8/2024.
+                    leido: true
+                    fechaCreacion: '2024-08-18T22:56:16.277Z'
+                    fechaActualizacion: '2024-08-18T22:56:16.277Z'
+                    __v: 0
+                  - _id: 66c5125069bc99323974fa2a
+                    empleadoId: 66bdfa9e9dc41f550e6be4b2
+                    mensaje: Tienes una evaluación pendiente desde 20/8/2024.
+                    leido: false
+                    fechaCreacion: '2024-08-20T22:01:52.486Z'
+                    fechaActualizacion: '2024-08-20T22:01:52.486Z'
+                    __v: 0
+    post:
+      tags:
+        - Notificacion
+      summary: Crea una notificacion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                empleadoId: 66bdfa9e9dc41f550e6be4b2
+                mensaje: Preguntas realacionadas al area de test
+      security:
+        - apikeyAuth: []
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '47'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:51:04 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724194412'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '323'
+            ETag:
+              schema:
+                type: string
+                example: W/"143-j1fx6UfiAQ4YF4R7EOcgPNWCcbY"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Notificacion creado exitosamente
+                status: success
+                code: 201
+                data:
+                  empleadoId: 66bdfa9e9dc41f550e6be4b2
+                  mensaje: Preguntas realacionadas al area de test
+                  leido: false
+                  _id: 66c51dd81890a25606789725
+                  fechaCreacion: '2024-08-20T22:51:04.458Z'
+                  fechaActualizacion: '2024-08-20T22:51:04.459Z'
+                  __v: 0
+  /api/notificacion/{id}:
+    get:
+      tags:
+        - Notificacion
+      summary: Obtiene una notificación
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c5125069bc99323974fa2a
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '42'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:48:48 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724194206'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '335'
+            ETag:
+              schema:
+                type: string
+                example: W/"14f-gASPXTuvtJ5SsL2zpxQHfiuStQ4"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Notificacion obtenido exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c5125069bc99323974fa2a
+                  empleadoId: 66bdfa9e9dc41f550e6be4b2
+                  mensaje: Tienes una evaluación pendiente desde 20/8/2024.
+                  leido: false
+                  fechaCreacion: '2024-08-20T22:01:52.486Z'
+                  fechaActualizacion: '2024-08-20T22:01:52.486Z'
+                  __v: 0
+    put:
+      tags:
+        - Notificacion
+      summary: Actualiza una notificación
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                leido: 'true'
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c27c1021821f3200beef9c
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '40'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:49:50 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724194206'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '337'
+            ETag:
+              schema:
+                type: string
+                example: W/"151-BkGa0oogEAAUNHFNcL9AtHJI6B4"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Notificacion actualizado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c27c1021821f3200beef9c
+                  empleadoId: 66bdfa9e9dc41f550e6be4b2
+                  mensaje: Tienes una evaluación pendiente desde 18/8/2024.
+                  leido: true
+                  fechaCreacion: '2024-08-18T22:56:16.277Z'
+                  fechaActualizacion: '2024-08-18T22:56:16.277Z'
+                  __v: 0
+    delete:
+      tags:
+        - Notificacion
+      summary: Elimina una notificación
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c51dd81890a25606789725
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '46'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:51:47 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724194412'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '326'
+            ETag:
+              schema:
+                type: string
+                example: W/"146-jB+lJ8epSOb6YdVM6QeAhkiy2nE"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Notificacion eliminado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c51dd81890a25606789725
+                  empleadoId: 66bdfa9e9dc41f550e6be4b2
+                  mensaje: Preguntas realacionadas al area de test
+                  leido: false
+                  fechaCreacion: '2024-08-20T22:51:04.458Z'
+                  fechaActualizacion: '2024-08-20T22:51:04.459Z'
+                  __v: 0
+  /api/notificacion/empleado/{id}:
+    get:
+      tags:
+        - Notificacion
+      summary: Obtiene las notificaciones por empleado
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bdfa9e9dc41f550e6be4b2
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '41'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 22:49:24 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724194206'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '586'
+            ETag:
+              schema:
+                type: string
+                example: W/"24a-7DwGMTiJTcT7L9x9UIWHWsY3QOs"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Notificacion obtenido exitosamente
+                status: success
+                code: 200
+                data:
+                  - _id: 66c27c1021821f3200beef9c
+                    empleadoId: 66bdfa9e9dc41f550e6be4b2
+                    mensaje: Tienes una evaluación pendiente desde 18/8/2024.
+                    leido: true
+                    fechaCreacion: '2024-08-18T22:56:16.277Z'
+                    fechaActualizacion: '2024-08-18T22:56:16.277Z'
+                    __v: 0
+                  - _id: 66c5125069bc99323974fa2a
+                    empleadoId: 66bdfa9e9dc41f550e6be4b2
+                    mensaje: Tienes una evaluación pendiente desde 20/8/2024.
+                    leido: false
+                    fechaCreacion: '2024-08-20T22:01:52.486Z'
+                    fechaActualizacion: '2024-08-20T22:01:52.486Z'
+                    __v: 0
+  /api/competencia:
+    post:
+      tags:
+        - Competencia
+      summary: Crea una competencias
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nombre: test1
+                descripcion: Preguntas realacionadas al area de test1
+      security:
+        - bearerAuth: []
+      responses:
+        "201":
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "43"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:54:29 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118880"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "304"
+            ETag:
+              schema:
+                type: string
+                example: W/"130-4ILjsoVNOoW8RetLe5yjbRBSZ5U"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Competencia creado exitosamente
+                status: success
+                code: 201
+                data:
+                  nombre: test1
+                  descripcion: Preguntas realacionadas al area de test1
+                  estado: true
+                  _id: 66c3f755adbbc77cc4a6c091
+                  fechaCreacion: "2024-08-20T01:54:29.638Z"
+                  fechaActualizacion: "2024-08-20T01:54:29.638Z"
+                  __v: 0
+    get:
+      tags:
+        - Competencia
+      summary: Lista las competencias
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "49"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:51:39 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118880"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "1076"
+            ETag:
+              schema:
+                type: string
+                example: W/"434-O3cVknVHedJMLSkJfCAwWi8fjlo"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Lista de competencias obtenida exitosamente
+                status: success
+                code: 200
+                data:
+                  - _id: 66beb92eca505cb2c9a2e4ef
+                    nombre: Comunicación
+                    descripcion: Preguntas realacionadas al area de Comunicación
+                    estado: true
+                    fechaCreacion: "2024-08-16T02:27:58.353Z"
+                    fechaActualizacion: "2024-08-16T02:27:58.353Z"
+                    __v: 0
+                  - _id: 66beb950ca505cb2c9a2e4f3
+                    nombre: Trabajo en equipo
+                    descripcion: Preguntas realacionadas al area de Comunicación
+                    estado: true
+                    fechaCreacion: "2024-08-16T02:28:32.768Z"
+                    fechaActualizacion: "2024-08-16T02:28:32.768Z"
+                    __v: 0
+                  - _id: 66beb95aca505cb2c9a2e4f5
+                    nombre: Orientación a resultados
+                    descripcion: >-
+                      Preguntas realacionadas al area de Orientación a
+                      resultados
+                    estado: true
+                    fechaCreacion: "2024-08-16T02:28:42.574Z"
+                    fechaActualizacion: "2024-08-16T02:28:42.574Z"
+                    __v: 0
+                  - _id: 66beb965ca505cb2c9a2e4f7
+                    nombre: Adaptabilidad
+                    descripcion: Preguntas realacionadas al area de Adaptabilidad
+                    estado: true
+                    fechaCreacion: "2024-08-16T02:28:53.661Z"
+                    fechaActualizacion: "2024-08-16T02:28:53.662Z"
+                    __v: 0
+  /api/competencia/{id}:
+    get:
+      tags:
+        - Competencia
+      summary: Obtiene una competencia
+      security:
+      - Bearer: []
+      securityDefinitions:
+        Bearer:
+          type: apiKey
+          in: header
+          name: Authorization
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66beb92eca505cb2c9a2e4ef
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "47"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:52:30 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118880"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "322"
+            ETag:
+              schema:
+                type: string
+                example: W/"142-E3TqYRUCkuJxjRlQsVBG3fn8l0w"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Competencia obtenido exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66beb92eca505cb2c9a2e4ef
+                  nombre: Comunicación
+                  descripcion: Preguntas realacionadas al area de Comunicación
+                  estado: true
+                  fechaCreacion: "2024-08-16T02:27:58.353Z"
+                  fechaActualizacion: "2024-08-16T02:27:58.353Z"
+                  __v: 0
+    put:
+      tags:
+        - Competencia
+      summary: Actualiza una competencia
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nombre: Comunicación
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66beb92eca505cb2c9a2e4ef
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "44"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:53:20 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724118880"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "325"
+            ETag:
+              schema:
+                type: string
+                example: W/"145-WoCN1c3sfpJhHH2kj6D90M3JraQ"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Competencia actualizado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66beb92eca505cb2c9a2e4ef
+                  nombre: Comunicación
+                  descripcion: Preguntas realacionadas al area de Comunicación
+                  estado: true
+                  fechaCreacion: "2024-08-16T02:27:58.353Z"
+                  fechaActualizacion: "2024-08-20T01:53:20.022Z"
+                  __v: 0
+    delete:
+      tags:
+        - Competencia
+      summary: Elimina una competencia
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c3f755adbbc77cc4a6c091
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: "50"
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: "49"
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 01:54:51 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: "1724119072"
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: "307"
+            ETag:
+              schema:
+                type: string
+                example: W/"133-HQcpc+MPy2jG58TLItFKyHO4VGA"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Competencia eliminado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c3f755adbbc77cc4a6c091
+                  nombre: test1
+                  descripcion: Preguntas realacionadas al area de test1
+                  estado: true
+                  fechaCreacion: "2024-08-20T01:54:29.638Z"
+                  fechaActualizacion: "2024-08-20T01:54:29.638Z"
+                  __v: 0
+  /api/questions:
+    post:
+      tags:
+        - Preguntas
+      summary: Crea una pregunta
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                competenciaId: 66beb95aca505cb2c9a2e4f5
+                texto: >-
+                  ¿Qué tan comprometido está este colaborador con el logro de
+                  los objetivos establecido?
+                opciones:
+                  - texto: No muestra interés
+                    value: 1
+                  - texto: Muestra poco interés
+                    value: 2
+                  - texto: Tiene un interés moderado
+                    value: 3
+                  - texto: Está muy comprometido
+                    value: 4
+                  - texto: Es extremadamente comprometido
+                    value: 5
+      security:
+        - apikeyAuth: []
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '48'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:08:38 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195468'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '781'
+            ETag:
+              schema:
+                type: string
+                example: W/"30d-Wfg3yIhEBsJysUfVoQcXzyyi/GQ"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Pregunta creado exitosamente
+                status: success
+                code: 201
+                data:
+                  competenciaId: 66beb95aca505cb2c9a2e4f5
+                  texto: >-
+                    ¿Qué tan comprometido está este colaborador con el logro de
+                    los objetivos establecido?
+                  opciones:
+                    - texto: No muestra interés
+                      value: 1
+                      _id: 66c521f6ecd26fddc36f591f
+                    - texto: Muestra poco interés
+                      value: 2
+                      _id: 66c521f6ecd26fddc36f5920
+                    - texto: Tiene un interés moderado
+                      value: 3
+                      _id: 66c521f6ecd26fddc36f5921
+                    - texto: Está muy comprometido
+                      value: 4
+                      _id: 66c521f6ecd26fddc36f5922
+                    - texto: Es extremadamente comprometido
+                      value: 5
+                      _id: 66c521f6ecd26fddc36f5923
+                  estado: true
+                  _id: 66c521f6ecd26fddc36f591e
+                  fechaCreacion: '2024-08-20T23:08:38.939Z'
+                  fechaActualizacion: '2024-08-20T23:08:38.940Z'
+                  __v: 0
+    get:
+      tags:
+        - Preguntas
+      summary: Lista las preguntas
+      security:
+        - apikeyAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '49'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:08:07 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195468'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2100'
+            ETag:
+              schema:
+                type: string
+                example: W/"834-SlDJtMP6Rt2Gk7Mms4+KIsn2S6k"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Lista de preguntas obtenida exitosamente
+                status: success
+                code: 200
+                data:
+                  - _id: 66bec30fc7f20bdc08c756cc
+                    competenciaId: 66beb92eca505cb2c9a2e4ef
+                    texto: >-
+                      ¿Con qué frecuencia este colaborador expresa sus ideas de
+                      manera clara y concisa?
+                    opciones:
+                      - texto: Nunca
+                        value: 1
+                        _id: 66bec30fc7f20bdc08c756cd
+                      - texto: Rara vez
+                        value: 2
+                        _id: 66bec30fc7f20bdc08c756ce
+                      - texto: A veces
+                        value: 3
+                        _id: 66bec30fc7f20bdc08c756cf
+                      - texto: Frecuentemente
+                        value: 4
+                        _id: 66bec30fc7f20bdc08c756d0
+                      - texto: Siempre
+                        value: 5
+                        _id: 66bec30fc7f20bdc08c756d1
+                    estado: true
+                    fechaCreacion: '2024-08-16T03:10:07.798Z'
+                    fechaActualizacion: '2024-08-16T03:10:07.798Z'
+                    __v: 0
+                  - _id: 66bec3cdfed88e63a47960ab
+                    competenciaId: 66beb950ca505cb2c9a2e4f3
+                    texto: >-
+                      ¿Qué tan bien colabora este colaborador con sus compañeros
+                      para alcanzar objetivos comunes?
+                    opciones:
+                      - texto: No colabora
+                        value: 1
+                        _id: 66bec3cdfed88e63a47960ac
+                      - texto: Colabora poco
+                        value: 2
+                        _id: 66bec3cdfed88e63a47960ad
+                      - texto: Colabora de manera adecuada
+                        value: 3
+                        _id: 66bec3cdfed88e63a47960ae
+                      - texto: Colabora activamente
+                        value: 4
+                        _id: 66bec3cdfed88e63a47960af
+                      - texto: Es un líder en el equipo
+                        value: 5
+                        _id: 66bec3cdfed88e63a47960b0
+                    estado: true
+                    fechaCreacion: '2024-08-16T03:13:17.494Z'
+                    fechaActualizacion: '2024-08-16T03:13:17.494Z'
+                    __v: 0
+                  - _id: 66bec3f5fed88e63a47960b9
+                    competenciaId: 66beb95aca505cb2c9a2e4f5
+                    texto: >-
+                      ¿Qué tan comprometido está este colaborador con el logro
+                      de los objetivos establecidos?
+                    opciones:
+                      - texto: No muestra interés
+                        value: 1
+                        _id: 66bec3f5fed88e63a47960ba
+                      - texto: Muestra poco interés
+                        value: 2
+                        _id: 66bec3f5fed88e63a47960bb
+                      - texto: Tiene un interés moderado
+                        value: 3
+                        _id: 66bec3f5fed88e63a47960bc
+                      - texto: Está muy comprometido
+                        value: 4
+                        _id: 66bec3f5fed88e63a47960bd
+                      - texto: Es extremadamente comprometido
+                        value: 5
+                        _id: 66bec3f5fed88e63a47960be
+                    estado: true
+                    fechaCreacion: '2024-08-16T03:13:57.601Z'
+                    fechaActualizacion: '2024-08-16T03:13:57.601Z'
+                    __v: 0
+  /api/questions/{id}:
+    get:
+      tags:
+        - Preguntas
+      summary: Obtiene una pregunta
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c521f6ecd26fddc36f591e
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '47'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:09:04 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195468'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '783'
+            ETag:
+              schema:
+                type: string
+                example: W/"30f-cuVG69ROU+c724ernO12d6h9Ses"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Pregunta obtenido exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c521f6ecd26fddc36f591e
+                  competenciaId: 66beb95aca505cb2c9a2e4f5
+                  texto: >-
+                    ¿Qué tan comprometido está este colaborador con el logro de
+                    los objetivos establecido?
+                  opciones:
+                    - texto: No muestra interés
+                      value: 1
+                      _id: 66c521f6ecd26fddc36f591f
+                    - texto: Muestra poco interés
+                      value: 2
+                      _id: 66c521f6ecd26fddc36f5920
+                    - texto: Tiene un interés moderado
+                      value: 3
+                      _id: 66c521f6ecd26fddc36f5921
+                    - texto: Está muy comprometido
+                      value: 4
+                      _id: 66c521f6ecd26fddc36f5922
+                    - texto: Es extremadamente comprometido
+                      value: 5
+                      _id: 66c521f6ecd26fddc36f5923
+                  estado: true
+                  fechaCreacion: '2024-08-20T23:08:38.939Z'
+                  fechaActualizacion: '2024-08-20T23:08:38.940Z'
+                  __v: 0
+    put:
+      tags:
+        - Preguntas
+      summary: Actualiza una pregunta
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                estado: false
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c521f6ecd26fddc36f591e
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '46'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:09:49 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195468'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '787'
+            ETag:
+              schema:
+                type: string
+                example: W/"313-H8OL5CUz61KGFkDb/WF0gZQXMr0"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Pregunta actualizado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c521f6ecd26fddc36f591e
+                  competenciaId: 66beb95aca505cb2c9a2e4f5
+                  texto: >-
+                    ¿Qué tan comprometido está este colaborador con el logro de
+                    los objetivos establecido?
+                  opciones:
+                    - texto: No muestra interés
+                      value: 1
+                      _id: 66c521f6ecd26fddc36f591f
+                    - texto: Muestra poco interés
+                      value: 2
+                      _id: 66c521f6ecd26fddc36f5920
+                    - texto: Tiene un interés moderado
+                      value: 3
+                      _id: 66c521f6ecd26fddc36f5921
+                    - texto: Está muy comprometido
+                      value: 4
+                      _id: 66c521f6ecd26fddc36f5922
+                    - texto: Es extremadamente comprometido
+                      value: 5
+                      _id: 66c521f6ecd26fddc36f5923
+                  estado: false
+                  fechaCreacion: '2024-08-20T23:08:38.939Z'
+                  fechaActualizacion: '2024-08-20T23:09:49.633Z'
+                  __v: 0
+    delete:
+      tags:
+        - Preguntas
+      summary: Elimina una pregunta
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66c521f6ecd26fddc36f591e
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '45'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:10:16 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195468'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '785'
+            ETag:
+              schema:
+                type: string
+                example: W/"311-AM/n0sn9Q0kwWf5AN7C5kkKn8nA"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Pregunta eliminado exitosamente
+                status: success
+                code: 200
+                data:
+                  _id: 66c521f6ecd26fddc36f591e
+                  competenciaId: 66beb95aca505cb2c9a2e4f5
+                  texto: >-
+                    ¿Qué tan comprometido está este colaborador con el logro de
+                    los objetivos establecido?
+                  opciones:
+                    - texto: No muestra interés
+                      value: 1
+                      _id: 66c521f6ecd26fddc36f591f
+                    - texto: Muestra poco interés
+                      value: 2
+                      _id: 66c521f6ecd26fddc36f5920
+                    - texto: Tiene un interés moderado
+                      value: 3
+                      _id: 66c521f6ecd26fddc36f5921
+                    - texto: Está muy comprometido
+                      value: 4
+                      _id: 66c521f6ecd26fddc36f5922
+                    - texto: Es extremadamente comprometido
+                      value: 5
+                      _id: 66c521f6ecd26fddc36f5923
+                  estado: false
+                  fechaCreacion: '2024-08-20T23:08:38.939Z'
+                  fechaActualizacion: '2024-08-20T23:09:49.633Z'
+                  __v: 0
+  /api/reports/employee/{id}:
+    get:
+      tags:
+        - Reporte
+      summary: Obtiene reporte con datos estadisticos de las evaluaciones por empleado
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 66bdfb0a9dc41f550e6be4b4
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '43'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:12:15 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195691'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1924'
+            ETag:
+              schema:
+                type: string
+                example: W/"784-So6TWPlR6ADW3J/D65HrcQtxNS8"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Reporte por empleado obtenida exitosamente
+                status: success
+                code: 200
+                data:
+                  promedioPorCompetencias:
+                    - _id: 66beb95aca505cb2c9a2e4f5
+                      nombreCompetencia: Orientación a resultados
+                      promedioValor: 4.25
+                    - _id: 66beb950ca505cb2c9a2e4f3
+                      nombreCompetencia: Trabajo en equipo
+                      promedioValor: 2.5
+                    - _id: 66beb92eca505cb2c9a2e4ef
+                      nombreCompetencia: Comunicación
+                      promedioValor: 2.25
+                  promedioPorCompetenciasYTiposEvaluadores:
+                    - _id:
+                        competenciaId: 66beb95aca505cb2c9a2e4f5
+                        tipoEvaluador: Supervisor
+                      nombreCompetencia: Orientación a resultados
+                      tipoEvaluador: Supervisor
+                      promedioValor: 4
+                    - _id:
+                        competenciaId: 66beb950ca505cb2c9a2e4f3
+                        tipoEvaluador: Supervisor
+                      nombreCompetencia: Trabajo en equipo
+                      tipoEvaluador: Supervisor
+                      promedioValor: 3
+                    - _id:
+                        competenciaId: 66beb92eca505cb2c9a2e4ef
+                        tipoEvaluador: Supervisor
+                      nombreCompetencia: Comunicación
+                      tipoEvaluador: Supervisor
+                      promedioValor: 2
+                  promedioPorPreguntas:
+                    - _id: 66bec3f5fed88e63a47960b9
+                      textoPregunta: >-
+                        ¿Qué tan comprometido está este colaborador con el logro
+                        de los objetivos establecidos?
+                      promedioValor: 4.25
+                    - _id: 66bec3cdfed88e63a47960ab
+                      textoPregunta: >-
+                        ¿Qué tan bien colabora este colaborador con sus
+                        compañeros para alcanzar objetivos comunes?
+                      promedioValor: 2.5
+                    - _id: 66bec30fc7f20bdc08c756cc
+                      textoPregunta: >-
+                        ¿Con qué frecuencia este colaborador expresa sus ideas
+                        de manera clara y concisa?
+                      promedioValor: 2.25
+                  top2CompetenciasMayor:
+                    - _id: 66beb95aca505cb2c9a2e4f5
+                      nombreCompetencia: Orientación a resultados
+                      promedioValor: 4.25
+                    - _id: 66beb950ca505cb2c9a2e4f3
+                      nombreCompetencia: Trabajo en equipo
+                      promedioValor: 2.5
+                  top2CompetenciasMenor:
+                    - _id: 66beb92eca505cb2c9a2e4ef
+                      nombreCompetencia: Comunicación
+                      promedioValor: 2.25
+                    - _id: 66beb950ca505cb2c9a2e4f3
+                      nombreCompetencia: Trabajo en equipo
+                      promedioValor: 2.5
+  /api/reports/department/{id}:
+    get:
+      tags:
+        - Reporte
+      summary: Obtiene reporte con datos estadisticos de las evaluaciones por departamento
+      security:
+        - apikeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: Dirección General
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '50'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '42'
+            Date:
+              schema:
+                type: string
+                example: Tue, 20 Aug 2024 23:12:29 GMT
+            X-RateLimit-Reset:
+              schema:
+                type: integer
+                example: '1724195691'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1175'
+            ETag:
+              schema:
+                type: string
+                example: W/"497-6ZKxpG5MBYaqAe5uLxm7DpcE3+I"
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Reporte por departamento obtenida exitosamente
+                status: success
+                code: 200
+                data:
+                  promedioPorDepartamento:
+                    - _id: Dirección General
+                      promedioValor: 3
+                  promedioPorPreguntaYDepartamento:
+                    - _id:
+                        departamento: Dirección General
+                        preguntaId: 66bec30fc7f20bdc08c756cc
+                      departamento: Dirección General
+                      textoPregunta: >-
+                        ¿Con qué frecuencia este colaborador expresa sus ideas
+                        de manera clara y concisa?
+                      promedioValor: 2.3333333333333335
+                    - _id:
+                        departamento: Dirección General
+                        preguntaId: 66bec3cdfed88e63a47960ab
+                      departamento: Dirección General
+                      textoPregunta: >-
+                        ¿Qué tan bien colabora este colaborador con sus
+                        compañeros para alcanzar objetivos comunes?
+                      promedioValor: 2.3333333333333335
+                    - _id:
+                        departamento: Dirección General
+                        preguntaId: 66bec3f5fed88e63a47960b9
+                      departamento: Dirección General
+                      textoPregunta: >-
+                        ¿Qué tan comprometido está este colaborador con el logro
+                        de los objetivos establecidos?
+                      promedioValor: 4.333333333333333
+                  topDepartamentosCalificacionMayor:
+                    - _id: Dirección General
+                      promedioValor: 3
+                  topDepartamentosCalificacionMenor:
+                    - _id: Dirección General
+                      promedioValor: 3
+
+

@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "1be96ce6-a163-47cf-8362-ef7681159c6d",
+		"name": "QUESTIONS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-1be96ce6-a163-47cf-8362-ef7681159c6d?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/questions",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\r\n    \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecido?\",\r\n    \"opciones\": [\r\n        {\r\n            \"texto\": \"No muestra interés\",\r\n            \"value\": 1\r\n        },\r\n        {\r\n            \"texto\": \"Muestra poco interés\",\r\n            \"value\": 2\r\n        },\r\n        {\r\n            \"texto\": \"Tiene un interés moderado\",\r\n            \"value\": 3\r\n        },\r\n        {\r\n            \"texto\": \"Está muy comprometido\",\r\n            \"value\": 4\r\n        },\r\n        {\r\n            \"texto\": \"Es extremadamente comprometido\",\r\n            \"value\": 5\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/questions"
+			},
+			"response": [
+				{
+					"name": "Crear pregunta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\r\n    \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecido?\",\r\n    \"opciones\": [\r\n        {\r\n            \"texto\": \"No muestra interés\",\r\n            \"value\": 1\r\n        },\r\n        {\r\n            \"texto\": \"Muestra poco interés\",\r\n            \"value\": 2\r\n        },\r\n        {\r\n            \"texto\": \"Tiene un interés moderado\",\r\n            \"value\": 3\r\n        },\r\n        {\r\n            \"texto\": \"Está muy comprometido\",\r\n            \"value\": 4\r\n        },\r\n        {\r\n            \"texto\": \"Es extremadamente comprometido\",\r\n            \"value\": 5\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/questions"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "48"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:08:38 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195468"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "781"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30d-Wfg3yIhEBsJysUfVoQcXzyyi/GQ\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pregunta creado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n        \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecido?\",\n        \"opciones\": [\n            {\n                \"texto\": \"No muestra interés\",\n                \"value\": 1,\n                \"_id\": \"66c521f6ecd26fddc36f591f\"\n            },\n            {\n                \"texto\": \"Muestra poco interés\",\n                \"value\": 2,\n                \"_id\": \"66c521f6ecd26fddc36f5920\"\n            },\n            {\n                \"texto\": \"Tiene un interés moderado\",\n                \"value\": 3,\n                \"_id\": \"66c521f6ecd26fddc36f5921\"\n            },\n            {\n                \"texto\": \"Está muy comprometido\",\n                \"value\": 4,\n                \"_id\": \"66c521f6ecd26fddc36f5922\"\n            },\n            {\n                \"texto\": \"Es extremadamente comprometido\",\n                \"value\": 5,\n                \"_id\": \"66c521f6ecd26fddc36f5923\"\n            }\n        ],\n        \"estado\": true,\n        \"_id\": \"66c521f6ecd26fddc36f591e\",\n        \"fechaCreacion\": \"2024-08-20T23:08:38.939Z\",\n        \"fechaActualizacion\": \"2024-08-20T23:08:38.940Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/questions",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{Url}}/api/questions"
+			},
+			"response": [
+				{
+					"name": "Lista de preguntas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Url}}/api/questions"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:08:07 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195468"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2100"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"834-SlDJtMP6Rt2Gk7Mms4+KIsn2S6k\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Lista de preguntas obtenida exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66bec30fc7f20bdc08c756cc\",\n            \"competenciaId\": \"66beb92eca505cb2c9a2e4ef\",\n            \"texto\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n            \"opciones\": [\n                {\n                    \"texto\": \"Nunca\",\n                    \"value\": 1,\n                    \"_id\": \"66bec30fc7f20bdc08c756cd\"\n                },\n                {\n                    \"texto\": \"Rara vez\",\n                    \"value\": 2,\n                    \"_id\": \"66bec30fc7f20bdc08c756ce\"\n                },\n                {\n                    \"texto\": \"A veces\",\n                    \"value\": 3,\n                    \"_id\": \"66bec30fc7f20bdc08c756cf\"\n                },\n                {\n                    \"texto\": \"Frecuentemente\",\n                    \"value\": 4,\n                    \"_id\": \"66bec30fc7f20bdc08c756d0\"\n                },\n                {\n                    \"texto\": \"Siempre\",\n                    \"value\": 5,\n                    \"_id\": \"66bec30fc7f20bdc08c756d1\"\n                }\n            ],\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T03:10:07.798Z\",\n            \"fechaActualizacion\": \"2024-08-16T03:10:07.798Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66bec3cdfed88e63a47960ab\",\n            \"competenciaId\": \"66beb950ca505cb2c9a2e4f3\",\n            \"texto\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n            \"opciones\": [\n                {\n                    \"texto\": \"No colabora\",\n                    \"value\": 1,\n                    \"_id\": \"66bec3cdfed88e63a47960ac\"\n                },\n                {\n                    \"texto\": \"Colabora poco\",\n                    \"value\": 2,\n                    \"_id\": \"66bec3cdfed88e63a47960ad\"\n                },\n                {\n                    \"texto\": \"Colabora de manera adecuada\",\n                    \"value\": 3,\n                    \"_id\": \"66bec3cdfed88e63a47960ae\"\n                },\n                {\n                    \"texto\": \"Colabora activamente\",\n                    \"value\": 4,\n                    \"_id\": \"66bec3cdfed88e63a47960af\"\n                },\n                {\n                    \"texto\": \"Es un líder en el equipo\",\n                    \"value\": 5,\n                    \"_id\": \"66bec3cdfed88e63a47960b0\"\n                }\n            ],\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T03:13:17.494Z\",\n            \"fechaActualizacion\": \"2024-08-16T03:13:17.494Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66bec3f5fed88e63a47960b9\",\n            \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n            \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n            \"opciones\": [\n                {\n                    \"texto\": \"No muestra interés\",\n                    \"value\": 1,\n                    \"_id\": \"66bec3f5fed88e63a47960ba\"\n                },\n                {\n                    \"texto\": \"Muestra poco interés\",\n                    \"value\": 2,\n                    \"_id\": \"66bec3f5fed88e63a47960bb\"\n                },\n                {\n                    \"texto\": \"Tiene un interés moderado\",\n                    \"value\": 3,\n                    \"_id\": \"66bec3f5fed88e63a47960bc\"\n                },\n                {\n                    \"texto\": \"Está muy comprometido\",\n                    \"value\": 4,\n                    \"_id\": \"66bec3f5fed88e63a47960bd\"\n                },\n                {\n                    \"texto\": \"Es extremadamente comprometido\",\n                    \"value\": 5,\n                    \"_id\": \"66bec3f5fed88e63a47960be\"\n                }\n            ],\n            \"estado\": true,\n            \"fechaCreacion\": \"2024-08-16T03:13:57.601Z\",\n            \"fechaActualizacion\": \"2024-08-16T03:13:57.601Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/questions/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/questions/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"questions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c521f6ecd26fddc36f591e"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtiene una pregunta por id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/questions/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c521f6ecd26fddc36f591e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:09:04 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195468"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "783"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30f-cuVG69ROU+c724ernO12d6h9Ses\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pregunta obtenido exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c521f6ecd26fddc36f591e\",\n        \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n        \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecido?\",\n        \"opciones\": [\n            {\n                \"texto\": \"No muestra interés\",\n                \"value\": 1,\n                \"_id\": \"66c521f6ecd26fddc36f591f\"\n            },\n            {\n                \"texto\": \"Muestra poco interés\",\n                \"value\": 2,\n                \"_id\": \"66c521f6ecd26fddc36f5920\"\n            },\n            {\n                \"texto\": \"Tiene un interés moderado\",\n                \"value\": 3,\n                \"_id\": \"66c521f6ecd26fddc36f5921\"\n            },\n            {\n                \"texto\": \"Está muy comprometido\",\n                \"value\": 4,\n                \"_id\": \"66c521f6ecd26fddc36f5922\"\n            },\n            {\n                \"texto\": \"Es extremadamente comprometido\",\n                \"value\": 5,\n                \"_id\": \"66c521f6ecd26fddc36f5923\"\n            }\n        ],\n        \"estado\": true,\n        \"fechaCreacion\": \"2024-08-20T23:08:38.939Z\",\n        \"fechaActualizacion\": \"2024-08-20T23:08:38.940Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/questions/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/questions/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"questions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c521f6ecd26fddc36f591e"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualiza una pregunta",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"estado\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/questions/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c521f6ecd26fddc36f591e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "46"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:09:49 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195468"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "787"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"313-H8OL5CUz61KGFkDb/WF0gZQXMr0\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pregunta actualizado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c521f6ecd26fddc36f591e\",\n        \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n        \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecido?\",\n        \"opciones\": [\n            {\n                \"texto\": \"No muestra interés\",\n                \"value\": 1,\n                \"_id\": \"66c521f6ecd26fddc36f591f\"\n            },\n            {\n                \"texto\": \"Muestra poco interés\",\n                \"value\": 2,\n                \"_id\": \"66c521f6ecd26fddc36f5920\"\n            },\n            {\n                \"texto\": \"Tiene un interés moderado\",\n                \"value\": 3,\n                \"_id\": \"66c521f6ecd26fddc36f5921\"\n            },\n            {\n                \"texto\": \"Está muy comprometido\",\n                \"value\": 4,\n                \"_id\": \"66c521f6ecd26fddc36f5922\"\n            },\n            {\n                \"texto\": \"Es extremadamente comprometido\",\n                \"value\": 5,\n                \"_id\": \"66c521f6ecd26fddc36f5923\"\n            }\n        ],\n        \"estado\": false,\n        \"fechaCreacion\": \"2024-08-20T23:08:38.939Z\",\n        \"fechaActualizacion\": \"2024-08-20T23:09:49.633Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/questions/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/questions/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"questions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c521f6ecd26fddc36f591e"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Elimina una pregunta",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/questions/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c521f6ecd26fddc36f591e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "45"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 23:10:16 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724195468"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "785"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"311-AM/n0sn9Q0kwWf5AN7C5kkKn8nA\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pregunta eliminado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c521f6ecd26fddc36f591e\",\n        \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n        \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecido?\",\n        \"opciones\": [\n            {\n                \"texto\": \"No muestra interés\",\n                \"value\": 1,\n                \"_id\": \"66c521f6ecd26fddc36f591f\"\n            },\n            {\n                \"texto\": \"Muestra poco interés\",\n                \"value\": 2,\n                \"_id\": \"66c521f6ecd26fddc36f5920\"\n            },\n            {\n                \"texto\": \"Tiene un interés moderado\",\n                \"value\": 3,\n                \"_id\": \"66c521f6ecd26fddc36f5921\"\n            },\n            {\n                \"texto\": \"Está muy comprometido\",\n                \"value\": 4,\n                \"_id\": \"66c521f6ecd26fddc36f5922\"\n            },\n            {\n                \"texto\": \"Es extremadamente comprometido\",\n                \"value\": 5,\n                \"_id\": \"66c521f6ecd26fddc36f5923\"\n            }\n        ],\n        \"estado\": false,\n        \"fechaCreacion\": \"2024-08-20T23:08:38.939Z\",\n        \"fechaActualizacion\": \"2024-08-20T23:09:49.633Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}

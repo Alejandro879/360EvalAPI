@@ -1,0 +1,627 @@
+{
+	"info": {
+		"_postman_id": "708f5455-a5f3-4bcd-980b-47f9df702bbf",
+		"name": "EVALUACIONES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-708f5455-a5f3-4bcd-980b-47f9df702bbf?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/evaluations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"evaluado\":  \"66bdfa9e9dc41f550e6be4b2\",\r\n    \"fechaFinalizacion\": \"2024-08-20T04:06:45.129Z\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/evaluations"
+			},
+			"response": [
+				{
+					"name": "Crea una evaluacion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluado\":  \"66bdfa9e9dc41f550e6be4b2\",\r\n    \"fechaFinalizacion\": \"2024-08-22T04:06:45.129Z\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/evaluations"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "48"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:01:52 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724191439"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "309"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"135-UrHBRRdLIaiwwrSwbtaF0GpRP1c\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluación creada\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"evaluado\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"estado\": \"Pendiente\",\n        \"fechaFinalizacion\": \"2024-08-22T04:06:45.129Z\",\n        \"_id\": \"66c5125069bc99323974fa28\",\n        \"fechaCreacion\": \"2024-08-20T22:01:52.161Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:01:52.161Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{Url}}/api/evaluations"
+			},
+			"response": [
+				{
+					"name": "Lista de evaluaciones",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Url}}/api/evaluations"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "43"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:00:13 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724191251"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12570"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"311a-rmCNyuOcsFOuBXLtDd+bxRj5k+w\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluaciones listadas\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66bf690bde58b85c7990c468\",\n            \"evaluado\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"estado\": \"Pendiente\",\n            \"fechaFinalizacion\": \"2024-08-20T04:06:45.129Z\",\n            \"fechaCreacion\": \"2024-08-16T14:58:19.659Z\",\n            \"evaluadores\": [],\n            \"preguntas\": [\n                {\n                    \"_id\": \"66bec30fc7f20bdc08c756cc\",\n                    \"competenciaId\": \"66beb92eca505cb2c9a2e4ef\",\n                    \"texto\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"Nunca\",\n                            \"value\": 1,\n                            \"_id\": \"66bec30fc7f20bdc08c756cd\"\n                        },\n                        {\n                            \"texto\": \"Rara vez\",\n                            \"value\": 2,\n                            \"_id\": \"66bec30fc7f20bdc08c756ce\"\n                        },\n                        {\n                            \"texto\": \"A veces\",\n                            \"value\": 3,\n                            \"_id\": \"66bec30fc7f20bdc08c756cf\"\n                        },\n                        {\n                            \"texto\": \"Frecuentemente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec30fc7f20bdc08c756d0\"\n                        },\n                        {\n                            \"texto\": \"Siempre\",\n                            \"value\": 5,\n                            \"_id\": \"66bec30fc7f20bdc08c756d1\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n                        \"nombre\": \"Comunicación\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n                        \"fechaActualizacion\": \"2024-08-20T01:53:20.022Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3cdfed88e63a47960ab\",\n                    \"competenciaId\": \"66beb950ca505cb2c9a2e4f3\",\n                    \"texto\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No colabora\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3cdfed88e63a47960ac\"\n                        },\n                        {\n                            \"texto\": \"Colabora poco\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3cdfed88e63a47960ad\"\n                        },\n                        {\n                            \"texto\": \"Colabora de manera adecuada\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3cdfed88e63a47960ae\"\n                        },\n                        {\n                            \"texto\": \"Colabora activamente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3cdfed88e63a47960af\"\n                        },\n                        {\n                            \"texto\": \"Es un líder en el equipo\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3cdfed88e63a47960b0\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                        \"nombre\": \"Trabajo en equipo\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3f5fed88e63a47960b9\",\n                    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n                    \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No muestra interés\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3f5fed88e63a47960ba\"\n                        },\n                        {\n                            \"texto\": \"Muestra poco interés\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3f5fed88e63a47960bb\"\n                        },\n                        {\n                            \"texto\": \"Tiene un interés moderado\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3f5fed88e63a47960bc\"\n                        },\n                        {\n                            \"texto\": \"Está muy comprometido\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3f5fed88e63a47960bd\"\n                        },\n                        {\n                            \"texto\": \"Es extremadamente comprometido\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3f5fed88e63a47960be\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n                        \"nombre\": \"Orientación a resultados\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Orientación a resultados\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"__v\": 0\n                    }\n                }\n            ],\n            \"respuestas\": []\n        },\n        {\n            \"_id\": \"66bed06a5a18ffe7ce7cbcc9\",\n            \"evaluado\": \"66bdfb0a9dc41f550e6be4b4\",\n            \"estado\": \"enviada\",\n            \"fechaFinalizacion\": \"2024-08-19T04:06:45.129Z\",\n            \"fechaCreacion\": \"2024-08-16T04:07:06.762Z\",\n            \"evaluadores\": [\n                {\n                    \"_id\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluadorId\": \"66be82b1ada6df2338a762b7\",\n                    \"tipoEvaluador\": \"Subordinado\",\n                    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"evaluadorDetalles\": {\n                        \"email\": \"empleado2@gmail.com\",\n                        \"nombres\": \"empleado2\",\n                        \"apellidos\": \"empleado2\",\n                        \"puesto\": \"Reclutador\",\n                        \"departamento\": \"Recursos Humanos\"\n                    }\n                },\n                {\n                    \"_id\": \"66be894a6c5649fdf7326145\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"tipoEvaluador\": \"Supervisor\",\n                    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"evaluadorDetalles\": {\n                        \"email\": \"empleado1@gmail.com\",\n                        \"nombres\": \"empleado1\",\n                        \"apellidos\": \"empleado1\",\n                        \"puesto\": \"Reclutador\",\n                        \"departamento\": \"Recursos Humanos\"\n                    }\n                }\n            ],\n            \"preguntas\": [\n                {\n                    \"_id\": \"66bec30fc7f20bdc08c756cc\",\n                    \"competenciaId\": \"66beb92eca505cb2c9a2e4ef\",\n                    \"texto\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"Nunca\",\n                            \"value\": 1,\n                            \"_id\": \"66bec30fc7f20bdc08c756cd\"\n                        },\n                        {\n                            \"texto\": \"Rara vez\",\n                            \"value\": 2,\n                            \"_id\": \"66bec30fc7f20bdc08c756ce\"\n                        },\n                        {\n                            \"texto\": \"A veces\",\n                            \"value\": 3,\n                            \"_id\": \"66bec30fc7f20bdc08c756cf\"\n                        },\n                        {\n                            \"texto\": \"Frecuentemente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec30fc7f20bdc08c756d0\"\n                        },\n                        {\n                            \"texto\": \"Siempre\",\n                            \"value\": 5,\n                            \"_id\": \"66bec30fc7f20bdc08c756d1\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n                        \"nombre\": \"Comunicación\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n                        \"fechaActualizacion\": \"2024-08-20T01:53:20.022Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3cdfed88e63a47960ab\",\n                    \"competenciaId\": \"66beb950ca505cb2c9a2e4f3\",\n                    \"texto\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No colabora\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3cdfed88e63a47960ac\"\n                        },\n                        {\n                            \"texto\": \"Colabora poco\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3cdfed88e63a47960ad\"\n                        },\n                        {\n                            \"texto\": \"Colabora de manera adecuada\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3cdfed88e63a47960ae\"\n                        },\n                        {\n                            \"texto\": \"Colabora activamente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3cdfed88e63a47960af\"\n                        },\n                        {\n                            \"texto\": \"Es un líder en el equipo\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3cdfed88e63a47960b0\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                        \"nombre\": \"Trabajo en equipo\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3f5fed88e63a47960b9\",\n                    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n                    \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No muestra interés\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3f5fed88e63a47960ba\"\n                        },\n                        {\n                            \"texto\": \"Muestra poco interés\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3f5fed88e63a47960bb\"\n                        },\n                        {\n                            \"texto\": \"Tiene un interés moderado\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3f5fed88e63a47960bc\"\n                        },\n                        {\n                            \"texto\": \"Está muy comprometido\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3f5fed88e63a47960bd\"\n                        },\n                        {\n                            \"texto\": \"Es extremadamente comprometido\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3f5fed88e63a47960be\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n                        \"nombre\": \"Orientación a resultados\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Orientación a resultados\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"__v\": 0\n                    }\n                }\n            ],\n            \"respuestas\": [\n                {\n                    \"_id\": \"66c241195570d728794180bc\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:40.918Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:40.919Z\",\n                    \"valor\": 2\n                },\n                {\n                    \"_id\": \"66c241195570d728794180bf\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:40.918Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:40.920Z\",\n                    \"valor\": 3\n                },\n                {\n                    \"_id\": \"66c241195570d728794180c2\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:40.918Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:40.920Z\",\n                    \"valor\": 4\n                },\n                {\n                    \"_id\": \"66c2412c5570d7287941bc3c\",\n                    \"evaluadorId\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"valor\": 3\n                },\n                {\n                    \"_id\": \"66c2412c5570d7287941bc3d\",\n                    \"evaluadorId\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:59.481Z\",\n                    \"valor\": 1\n                },\n                {\n                    \"_id\": \"66c2412c5570d7287941bc40\",\n                    \"evaluadorId\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:59.481Z\",\n                    \"valor\": 5\n                },\n                {\n                    \"_id\": \"66c264e55570d72879b2be3f\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"evaluadorId\": \"66c26454c2557c10a6587f9f\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T21:17:24.573Z\",\n                    \"fechaCreacion\": \"2024-08-18T21:17:24.575Z\",\n                    \"valor\": 2\n                },\n                {\n                    \"_id\": \"66c264e55570d72879b2be41\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"evaluadorId\": \"66c26454c2557c10a6587f9f\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T21:17:24.573Z\",\n                    \"fechaCreacion\": \"2024-08-18T21:17:24.579Z\",\n                    \"valor\": 3\n                },\n                {\n                    \"_id\": \"66c264e55570d72879b2be45\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"evaluadorId\": \"66c26454c2557c10a6587f9f\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T21:17:24.573Z\",\n                    \"fechaCreacion\": \"2024-08-18T21:17:24.580Z\",\n                    \"valor\": 4\n                }\n            ]\n        },\n        {\n            \"_id\": \"66c27c0f21821f3200beef9a\",\n            \"evaluado\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"estado\": \"Pendiente\",\n            \"fechaFinalizacion\": \"2024-08-20T04:06:45.129Z\",\n            \"fechaCreacion\": \"2024-08-18T22:56:15.953Z\",\n            \"evaluadores\": [],\n            \"preguntas\": [\n                {\n                    \"_id\": \"66bec30fc7f20bdc08c756cc\",\n                    \"competenciaId\": \"66beb92eca505cb2c9a2e4ef\",\n                    \"texto\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"Nunca\",\n                            \"value\": 1,\n                            \"_id\": \"66bec30fc7f20bdc08c756cd\"\n                        },\n                        {\n                            \"texto\": \"Rara vez\",\n                            \"value\": 2,\n                            \"_id\": \"66bec30fc7f20bdc08c756ce\"\n                        },\n                        {\n                            \"texto\": \"A veces\",\n                            \"value\": 3,\n                            \"_id\": \"66bec30fc7f20bdc08c756cf\"\n                        },\n                        {\n                            \"texto\": \"Frecuentemente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec30fc7f20bdc08c756d0\"\n                        },\n                        {\n                            \"texto\": \"Siempre\",\n                            \"value\": 5,\n                            \"_id\": \"66bec30fc7f20bdc08c756d1\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n                        \"nombre\": \"Comunicación\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n                        \"fechaActualizacion\": \"2024-08-20T01:53:20.022Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3cdfed88e63a47960ab\",\n                    \"competenciaId\": \"66beb950ca505cb2c9a2e4f3\",\n                    \"texto\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No colabora\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3cdfed88e63a47960ac\"\n                        },\n                        {\n                            \"texto\": \"Colabora poco\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3cdfed88e63a47960ad\"\n                        },\n                        {\n                            \"texto\": \"Colabora de manera adecuada\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3cdfed88e63a47960ae\"\n                        },\n                        {\n                            \"texto\": \"Colabora activamente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3cdfed88e63a47960af\"\n                        },\n                        {\n                            \"texto\": \"Es un líder en el equipo\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3cdfed88e63a47960b0\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                        \"nombre\": \"Trabajo en equipo\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3f5fed88e63a47960b9\",\n                    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n                    \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No muestra interés\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3f5fed88e63a47960ba\"\n                        },\n                        {\n                            \"texto\": \"Muestra poco interés\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3f5fed88e63a47960bb\"\n                        },\n                        {\n                            \"texto\": \"Tiene un interés moderado\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3f5fed88e63a47960bc\"\n                        },\n                        {\n                            \"texto\": \"Está muy comprometido\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3f5fed88e63a47960bd\"\n                        },\n                        {\n                            \"texto\": \"Es extremadamente comprometido\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3f5fed88e63a47960be\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n                        \"nombre\": \"Orientación a resultados\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Orientación a resultados\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"__v\": 0\n                    }\n                }\n            ],\n            \"respuestas\": []\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluations/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/evaluations/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66bed06a5a18ffe7ce7cbcc9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtiene una evaluacion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/evaluations/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"evaluations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66bed06a5a18ffe7ce7cbcc9"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "49"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:00:58 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724191439"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6477"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"194d-TrFhxfzyi6nxy5XpNayWCGFMobU\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluación obtenida\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66bed06a5a18ffe7ce7cbcc9\",\n            \"evaluado\": \"66bdfb0a9dc41f550e6be4b4\",\n            \"estado\": \"enviada\",\n            \"fechaFinalizacion\": \"2024-08-19T04:06:45.129Z\",\n            \"fechaCreacion\": \"2024-08-16T04:07:06.762Z\",\n            \"evaluadores\": [\n                {\n                    \"_id\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluadorId\": \"66be82b1ada6df2338a762b7\",\n                    \"tipoEvaluador\": \"Subordinado\",\n                    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"evaluadorDetalles\": {\n                        \"email\": \"empleado2@gmail.com\",\n                        \"nombres\": \"empleado2\",\n                        \"apellidos\": \"empleado2\",\n                        \"puesto\": \"Reclutador\",\n                        \"departamento\": \"Recursos Humanos\"\n                    }\n                },\n                {\n                    \"_id\": \"66be894a6c5649fdf7326145\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"tipoEvaluador\": \"Supervisor\",\n                    \"empleadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"evaluadorDetalles\": {\n                        \"email\": \"empleado1@gmail.com\",\n                        \"nombres\": \"empleado1\",\n                        \"apellidos\": \"empleado1\",\n                        \"puesto\": \"Reclutador\",\n                        \"departamento\": \"Recursos Humanos\"\n                    }\n                }\n            ],\n            \"preguntas\": [\n                {\n                    \"_id\": \"66bec30fc7f20bdc08c756cc\",\n                    \"competenciaId\": \"66beb92eca505cb2c9a2e4ef\",\n                    \"texto\": \"¿Con qué frecuencia este colaborador expresa sus ideas de manera clara y concisa?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"Nunca\",\n                            \"value\": 1,\n                            \"_id\": \"66bec30fc7f20bdc08c756cd\"\n                        },\n                        {\n                            \"texto\": \"Rara vez\",\n                            \"value\": 2,\n                            \"_id\": \"66bec30fc7f20bdc08c756ce\"\n                        },\n                        {\n                            \"texto\": \"A veces\",\n                            \"value\": 3,\n                            \"_id\": \"66bec30fc7f20bdc08c756cf\"\n                        },\n                        {\n                            \"texto\": \"Frecuentemente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec30fc7f20bdc08c756d0\"\n                        },\n                        {\n                            \"texto\": \"Siempre\",\n                            \"value\": 5,\n                            \"_id\": \"66bec30fc7f20bdc08c756d1\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:10:07.798Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb92eca505cb2c9a2e4ef\",\n                        \"nombre\": \"Comunicación\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:27:58.353Z\",\n                        \"fechaActualizacion\": \"2024-08-20T01:53:20.022Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3cdfed88e63a47960ab\",\n                    \"competenciaId\": \"66beb950ca505cb2c9a2e4f3\",\n                    \"texto\": \"¿Qué tan bien colabora este colaborador con sus compañeros para alcanzar objetivos comunes?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No colabora\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3cdfed88e63a47960ac\"\n                        },\n                        {\n                            \"texto\": \"Colabora poco\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3cdfed88e63a47960ad\"\n                        },\n                        {\n                            \"texto\": \"Colabora de manera adecuada\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3cdfed88e63a47960ae\"\n                        },\n                        {\n                            \"texto\": \"Colabora activamente\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3cdfed88e63a47960af\"\n                        },\n                        {\n                            \"texto\": \"Es un líder en el equipo\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3cdfed88e63a47960b0\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:17.494Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb950ca505cb2c9a2e4f3\",\n                        \"nombre\": \"Trabajo en equipo\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Comunicación\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:32.768Z\",\n                        \"__v\": 0\n                    }\n                },\n                {\n                    \"_id\": \"66bec3f5fed88e63a47960b9\",\n                    \"competenciaId\": \"66beb95aca505cb2c9a2e4f5\",\n                    \"texto\": \"¿Qué tan comprometido está este colaborador con el logro de los objetivos establecidos?\",\n                    \"opciones\": [\n                        {\n                            \"texto\": \"No muestra interés\",\n                            \"value\": 1,\n                            \"_id\": \"66bec3f5fed88e63a47960ba\"\n                        },\n                        {\n                            \"texto\": \"Muestra poco interés\",\n                            \"value\": 2,\n                            \"_id\": \"66bec3f5fed88e63a47960bb\"\n                        },\n                        {\n                            \"texto\": \"Tiene un interés moderado\",\n                            \"value\": 3,\n                            \"_id\": \"66bec3f5fed88e63a47960bc\"\n                        },\n                        {\n                            \"texto\": \"Está muy comprometido\",\n                            \"value\": 4,\n                            \"_id\": \"66bec3f5fed88e63a47960bd\"\n                        },\n                        {\n                            \"texto\": \"Es extremadamente comprometido\",\n                            \"value\": 5,\n                            \"_id\": \"66bec3f5fed88e63a47960be\"\n                        }\n                    ],\n                    \"estado\": true,\n                    \"fechaCreacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"fechaActualizacion\": \"2024-08-16T03:13:57.601Z\",\n                    \"__v\": 0,\n                    \"competenciaDetalles\": {\n                        \"_id\": \"66beb95aca505cb2c9a2e4f5\",\n                        \"nombre\": \"Orientación a resultados\",\n                        \"descripcion\": \"Preguntas realacionadas al area de Orientación a resultados\",\n                        \"estado\": true,\n                        \"fechaCreacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"fechaActualizacion\": \"2024-08-16T02:28:42.574Z\",\n                        \"__v\": 0\n                    }\n                }\n            ],\n            \"respuestas\": [\n                {\n                    \"_id\": \"66c241195570d728794180bc\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:40.918Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:40.919Z\",\n                    \"valor\": 2\n                },\n                {\n                    \"_id\": \"66c241195570d728794180bf\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:40.918Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:40.920Z\",\n                    \"valor\": 3\n                },\n                {\n                    \"_id\": \"66c241195570d728794180c2\",\n                    \"evaluadorId\": \"66be82a5ada6df2338a762b5\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:40.918Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:40.920Z\",\n                    \"valor\": 4\n                },\n                {\n                    \"_id\": \"66c2412c5570d7287941bc3c\",\n                    \"evaluadorId\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"valor\": 3\n                },\n                {\n                    \"_id\": \"66c2412c5570d7287941bc3d\",\n                    \"evaluadorId\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:59.481Z\",\n                    \"valor\": 1\n                },\n                {\n                    \"_id\": \"66c2412c5570d7287941bc40\",\n                    \"evaluadorId\": \"66be86325fd3bfc1ddfd8a3a\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T18:44:59.480Z\",\n                    \"fechaCreacion\": \"2024-08-18T18:44:59.481Z\",\n                    \"valor\": 5\n                },\n                {\n                    \"_id\": \"66c264e55570d72879b2be3f\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"evaluadorId\": \"66c26454c2557c10a6587f9f\",\n                    \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T21:17:24.573Z\",\n                    \"fechaCreacion\": \"2024-08-18T21:17:24.575Z\",\n                    \"valor\": 2\n                },\n                {\n                    \"_id\": \"66c264e55570d72879b2be41\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"evaluadorId\": \"66c26454c2557c10a6587f9f\",\n                    \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T21:17:24.573Z\",\n                    \"fechaCreacion\": \"2024-08-18T21:17:24.579Z\",\n                    \"valor\": 3\n                },\n                {\n                    \"_id\": \"66c264e55570d72879b2be45\",\n                    \"evaluacionId\": \"66bed06a5a18ffe7ce7cbcc9\",\n                    \"evaluadorId\": \"66c26454c2557c10a6587f9f\",\n                    \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\n                    \"__v\": 0,\n                    \"evaluadoId\": \"66bdfb0a9dc41f550e6be4b4\",\n                    \"fechaActualizacion\": \"2024-08-18T21:17:24.573Z\",\n                    \"fechaCreacion\": \"2024-08-18T21:17:24.580Z\",\n                    \"valor\": 4\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluations/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"estado\": \"Pendiente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/evaluations/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66bed06a5a18ffe7ce7cbcc9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualiza un evaluacion",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"estado\": \"Pendiente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/evaluations/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"evaluations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c5125069bc99323974fa28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "46"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:02:40 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724191439"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13a-9A2TciMHOvMWm5TPslnXocH0AGw\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluación actualizada\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c5125069bc99323974fa28\",\n        \"evaluado\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"estado\": \"Pendiente\",\n        \"fechaFinalizacion\": \"2024-08-22T04:06:45.129Z\",\n        \"fechaCreacion\": \"2024-08-20T22:01:52.161Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:02:40.922Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluations/:id/submit",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"evaluadorId\":  \"66c26454c2557c10a6587f9f\",\r\n    \"evaluadoId\":  \"66bdfb0a9dc41f550e6be4b4\",\r\n    \"respuestas\": [\r\n        { \r\n            \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\r\n            \"value\": 2\r\n        },\r\n        { \r\n            \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\r\n            \"value\": 3\r\n        },\r\n        { \r\n            \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\r\n            \"value\": 4\r\n        }\r\n    ] \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/evaluations/:id/submit",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluations",
+						":id",
+						"submit"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66bed06a5a18ffe7ce7cbcc9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Envia una evaluacion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluadorId\":  \"66c26454c2557c10a6587f9f\",\r\n    \"evaluadoId\":  \"66bdfb0a9dc41f550e6be4b4\",\r\n    \"respuestas\": [\r\n        { \r\n            \"preguntaId\": \"66bec30fc7f20bdc08c756cc\",\r\n            \"value\": 2\r\n        },\r\n        { \r\n            \"preguntaId\": \"66bec3cdfed88e63a47960ab\",\r\n            \"value\": 3\r\n        },\r\n        { \r\n            \"preguntaId\": \"66bec3f5fed88e63a47960b9\",\r\n            \"value\": 4\r\n        }\r\n    ] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/evaluations/:id/submit",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"evaluations",
+								":id",
+								"submit"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c5125069bc99323974fa28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "45"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:03:05 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724191439"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-7F0M6rkaFsi1weDYTNKE1KVuANQ\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluación enviada\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/evaluations/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/evaluations/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"evaluations",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66b5a05c6c19728cfacdd056"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Elimina una evaluacion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/evaluations/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"evaluations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c5125069bc99323974fa28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "44"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:03:28 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724191439"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "311"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"137-jIqN7LGjjsdGrvY/aPpYzzWTIHc\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Evaluación obtenida\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c5125069bc99323974fa28\",\n        \"evaluado\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"estado\": \"Pendiente\",\n        \"fechaFinalizacion\": \"2024-08-22T04:06:45.129Z\",\n        \"fechaCreacion\": \"2024-08-20T22:01:52.161Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:02:40.922Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}

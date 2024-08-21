@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "4fa084cd-a75b-4c9a-9f99-124c7dc4736a",
+		"name": "NOTIFICACION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4714534",
+		"_collection_link": "https://www.postman.com/360evalapi/workspace/16252334-b5c0-41e9-95c0-b57a16e2bbd1/collection/4714534-4fa084cd-a75b-4c9a-9f99-124c7dc4736a?action=share&source=collection_link&creator=4714534"
+	},
+	"item": [
+		{
+			"name": "/api/notificacion",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{Url}}/api/notificacion"
+			},
+			"response": [
+				{
+					"name": "Obtiene todas las notificaciones",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Url}}/api/notificacion"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "43"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:48:15 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724194206"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "596"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"254-xyOrJhe/4ZtwFlbRWApUMAs26ho\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Lista de notificacions obtenida exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66c27c1021821f3200beef9c\",\n            \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"mensaje\": \"Tienes una evaluación pendiente desde 18/8/2024.\",\n            \"leido\": true,\n            \"fechaCreacion\": \"2024-08-18T22:56:16.277Z\",\n            \"fechaActualizacion\": \"2024-08-18T22:56:16.277Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66c5125069bc99323974fa2a\",\n            \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"mensaje\": \"Tienes una evaluación pendiente desde 20/8/2024.\",\n            \"leido\": false,\n            \"fechaCreacion\": \"2024-08-20T22:01:52.486Z\",\n            \"fechaActualizacion\": \"2024-08-20T22:01:52.486Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/notificacion/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/notificacion/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"notificacion",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c5125069bc99323974fa2a"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtiene la notificacion por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/notificacion/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"notificacion",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c5125069bc99323974fa2a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "42"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:48:48 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724194206"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14f-gASPXTuvtJ5SsL2zpxQHfiuStQ4\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notificacion obtenido exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c5125069bc99323974fa2a\",\n        \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"mensaje\": \"Tienes una evaluación pendiente desde 20/8/2024.\",\n        \"leido\": false,\n        \"fechaCreacion\": \"2024-08-20T22:01:52.486Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:01:52.486Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/notificacion/empleado/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/notificacion/empleado/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"notificacion",
+						"empleado",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66bdfa9e9dc41f550e6be4b2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtiene las notificaciones de un empleado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/notificacion/empleado/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"notificacion",
+								"empleado",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66bdfa9e9dc41f550e6be4b2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:49:24 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724194206"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "586"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24a-7DwGMTiJTcT7L9x9UIWHWsY3QOs\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notificacion obtenido exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"_id\": \"66c27c1021821f3200beef9c\",\n            \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"mensaje\": \"Tienes una evaluación pendiente desde 18/8/2024.\",\n            \"leido\": true,\n            \"fechaCreacion\": \"2024-08-18T22:56:16.277Z\",\n            \"fechaActualizacion\": \"2024-08-18T22:56:16.277Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"66c5125069bc99323974fa2a\",\n            \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n            \"mensaje\": \"Tienes una evaluación pendiente desde 20/8/2024.\",\n            \"leido\": false,\n            \"fechaCreacion\": \"2024-08-20T22:01:52.486Z\",\n            \"fechaActualizacion\": \"2024-08-20T22:01:52.486Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/notificacion/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"leido\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url}}/api/notificacion/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"notificacion",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c27c1021821f3200beef9c"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizacion de notificaciones",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"leido\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Url}}/api/notificacion/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"notificacion",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c27c1021821f3200beef9c"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "40"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:49:50 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724194206"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "337"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"151-BkGa0oogEAAUNHFNcL9AtHJI6B4\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notificacion actualizado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c27c1021821f3200beef9c\",\n        \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"mensaje\": \"Tienes una evaluación pendiente desde 18/8/2024.\",\n        \"leido\": true,\n        \"fechaCreacion\": \"2024-08-18T22:56:16.277Z\",\n        \"fechaActualizacion\": \"2024-08-18T22:56:16.277Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/notificacion/:id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/notificacion/:id",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"notificacion",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66c51dd81890a25606789725"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una notificacion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Url}}/api/notificacion/:id",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"api",
+								"notificacion",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66c51dd81890a25606789725"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "46"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:51:47 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724194412"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "326"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"146-jB+lJ8epSOb6YdVM6QeAhkiy2nE\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notificacion eliminado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 200,\n    \"data\": {\n        \"_id\": \"66c51dd81890a25606789725\",\n        \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"mensaje\": \"Preguntas realacionadas al area de test\",\n        \"leido\": false,\n        \"fechaCreacion\": \"2024-08-20T22:51:04.458Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:51:04.459Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/notificacion",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "Bearer {{token360}}",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\", \r\n    \"mensaje\": \"Preguntas realacionadas al area de test\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Url}}/api/notificacion"
+			},
+			"response": [
+				{
+					"name": "Crear notificación",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\", \r\n    \"mensaje\": \"Preguntas realacionadas al area de test\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Url}}/api/notificacion"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "50"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Aug 2024 22:51:04 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1724194412"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "323"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"143-j1fx6UfiAQ4YF4R7EOcgPNWCcbY\""
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notificacion creado exitosamente\",\n    \"status\": \"success\",\n    \"code\": 201,\n    \"data\": {\n        \"empleadoId\": \"66bdfa9e9dc41f550e6be4b2\",\n        \"mensaje\": \"Preguntas realacionadas al area de test\",\n        \"leido\": false,\n        \"_id\": \"66c51dd81890a25606789725\",\n        \"fechaCreacion\": \"2024-08-20T22:51:04.458Z\",\n        \"fechaActualizacion\": \"2024-08-20T22:51:04.459Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}
